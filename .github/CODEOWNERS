@@ -1,0 +1,16 @@
+# Code owners for the Solana UIUX Onboarding Kit.
+# When a PR touches a matching path, the listed owner is automatically
+# requested for review. Syntax: <path-pattern> <@owner>
+# Docs: https://docs.github.com/articles/about-code-owners
+
+# Default owner for everything in the repo
+*                       @draaujpeg
+
+# Research / synthesis (the published book)
+/docs/                  @draaujpeg
+
+# Design guidelines, patterns, and components
+/design-guidelines/     @draaujpeg
+
+# The Claude skill
+/skill/                 @draaujpeg
