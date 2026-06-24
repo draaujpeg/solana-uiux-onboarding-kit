@@ -24,4 +24,9 @@ Start with [`getting-started.md`](getting-started.md).
 
 ## License
 
-<!-- TODO: choose a license (e.g. MIT for code, CC-BY for research/guidelines) -->
+This project is dual-licensed:
+
+- **Code** — the Claude skill and design components — under the [MIT License](LICENSE).
+- **Research & documentation** under `docs/` under [CC BY 4.0](docs/LICENSE).
+
+You are free to fork, use, and build upon the material; attribution is required for the research content.
