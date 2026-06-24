@@ -8,6 +8,10 @@ The Solana ecosystem, like crypto in general, was built by and for people who al
 
 Onboarding is where this rupture either happens or is avoided. It is the border between the user who adopts and the one who abandons; and, in a financial context of irreversible actions, it is also the border between the user who protects themselves and the one who loses funds for not having understood what they were doing.
 
+This is not just a local impression. Voskobojnikov et al. ([CHI 2021](https://dl.acm.org/doi/10.1145/3411764.3445407)), analyzing 45,821 reviews of the five most popular mobile wallets, found that UX problems lead to severe errors and irreversible financial losses, even among experienced users, and traced the root cause to the absence of clear communication standards during onboarding.
+
+And the failure is structural, not incidental. Every team building on Solana solves onboarding from scratch, in isolation, with no shared reference, so the same action works in a completely different way in each app, and the beginner relearns the basics at every new product. Solana has world-class technical infrastructure: fast finality, low fees, a rich tooling ecosystem. What it lacks is an equivalent **UX infrastructure**: documented, researched, and accessible to any builder. That missing layer is where onboarding breaks.
+
 This investigation started from a practical question:
 
 {% hint style="info" %}

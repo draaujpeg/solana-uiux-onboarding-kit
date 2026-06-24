@@ -34,6 +34,8 @@ The next phase, therefore, has a clear direction: **produce a design system that
 
 And this is where the diagnosis meets its economic consequence. Each pattern systematized in this document is, in the end, a plugged funnel leak: one fewer beginner who gives up at the seed phrase, one fewer KYC that becomes a negative surprise, one fewer transaction that fails without explanation. **That is why UI/UX design is not an aesthetic cost — it is the cheapest and most cross-cutting adoption lever available to the network**, because a single well-designed solution replicates across dozens of products that today repeat exactly the same mistake. Solving onboarding systemically does not improve one app at a time — it improves the conversion rate of the entire ecosystem, transforming Solana's entry point from an expert filter into a viable path for those coming from Web2. That is the bet: that adoption, in an environment of irreversible actions, is won less by attracting new people and more by making sure that whoever arrives can, at last, stay.
 
+This return compounds across the ecosystem. For the builder, the kit removes a recurring cost: no team has to solve onboarding from zero, and a shared reference saves weeks of research and iteration for every product that adopts it. For the network, the investment behaves like infrastructure rather than a one-off. Every team that adopts the patterns improves its own users' experience, and the benefit accrues to the whole ecosystem at once.
+
 ---
 
 _Synthesis document · 13 apps · 390 items evaluated · Nielsen protocol (10 heuristics × 3 questions)._

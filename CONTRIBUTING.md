@@ -8,6 +8,10 @@ Thanks for your interest in the Solana UIUX Onboarding Kit. Contributions are we
 - **Open a pull request** to propose a concrete change (text, guidelines, components, or skill).
 - **Fork and adapt** the material for your own product — that's what the license is for.
 
+## Where this is headed
+
+This kit is an initial contribution, not a finished one. It is the first material of an ecosystem meant to grow: a shared foundation that reinforces the building and refinement of new products over time. Rather than a fixed roadmap, it is an open invitation. Bring your perspective, your research, and your patterns, and help shape what comes next. If something here can be improved, extended, or questioned, open an issue or a pull request and let's build it together.
+
 ## Workflow
 
 The `main` branch is protected: it cannot be pushed to directly. Every change goes through a pull request.
