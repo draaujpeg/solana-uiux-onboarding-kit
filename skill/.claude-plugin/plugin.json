@@ -1,0 +1,8 @@
+{
+  "name": "solana-uiux-onboarding-kit",
+  "version": "0.1.0",
+  "description": "Applies the Solana UIUX Onboarding Kit's research, guidelines, and components inside Claude Code.",
+  "author": {
+    "name": "draaujpeg"
+  }
+}

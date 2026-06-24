@@ -1,0 +1,14 @@
+# Claude Code (local settings)
+.claude/
+
+# Operating system
+Thumbs.db
+.DS_Store
+
+# Temporary
+*.tmp
+scratchpad/
+
+# Dependencies (in case code components are added)
+node_modules/
+dist/
