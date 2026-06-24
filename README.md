@@ -2,9 +2,11 @@
 
 > Research, design guidelines, components, and a Claude skill to fix onboarding for Solana ecosystem products.
 
-The Solana ecosystem was built by and for people who already understand seed phrases, self-custody, and the irreversibility of transactions. For everyone arriving from Web2, onboarding is where adoption breaks — and, in a context of irreversible money, where users either protect themselves or lose funds. This kit turns a heuristic study of **13 Solana apps (390 evaluated items)** into reusable solutions: the **research** that proves the problem is systemic, the **design guidelines and components** that solve it, and a **Claude skill** that applies them — so any product can fix its entry flow instead of repeating the same mistakes.
+The Solana ecosystem was built by and for people who already understand seed phrases, self-custody, and the irreversibility of transactions. For everyone arriving from Web2, onboarding is where adoption breaks — and, in a context of irreversible money, where users either protect themselves or lose funds. This kit turns a heuristic study into reusable solutions: the **research** that proves the problem is systemic, the **design guidelines and components** that solve it, and a **Claude skill** that applies them — so any product can fix its entry flow instead of repeating the same mistakes.
 
-**Who it's for:** designers, product teams, and builders of Solana wallets, DEXs, aggregators, and lending products — plus anyone using Claude Code to design or review crypto onboarding flows.
+This work was supported by **SuperteamBR** (Solana).
+
+**Who it's for:** designers, devs, and builders in the Solana ecosystem.
 
 ## What's inside
 
