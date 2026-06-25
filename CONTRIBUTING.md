@@ -52,8 +52,7 @@ Prefer **squash merges** so each PR lands as a single, clean commit on `main`.
 
 ## Repository structure
 
-- `docs/` — the research synthesis (heuristic analysis) in chapters (GitBook source)
-- `design-guidelines/` — design principles, patterns, and components
-  - `design-guidelines/components/` — design tokens and UI components
-- `skill/` — the Claude skill and its usage guide
-- `getting-started.md` — the product's entry point
+- `docs/`: the research synthesis (heuristic analysis) in chapters (GitBook source)
+- `design-guidelines/`: the design flow, patterns, and components (🚧 under construction)
+- `skill/`: the Claude skill (🚧 under construction)
+- `getting-started.md`: the product's entry point

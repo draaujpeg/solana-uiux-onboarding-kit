@@ -29,7 +29,7 @@ This distinction matters because a problem that creates distrust in a context of
 Aggregated across the 13 apps, these verdicts, severities, and impact types compose a **friction map**: a structured view of where onboarding breaks across the ecosystem and how severely. The next chapters read that map tier by tier and pattern by pattern.
 
 {% hint style="warning" %}
-**Scope and methodological honesty.** The focus was always the **onboarding flow**, from the first screen to the first moment of real use, and not the entire product. In some cases (Backpack, OKX), the full registration/KYC was not completed by the user; this is flagged in the individual evaluations to preserve the honesty of the method.
+**Scope and methodological honesty.** The focus was always the **onboarding flow**, from the first screen to the first moment of real use, and not the entire product. In some cases (Backpack, OKX), the full registration/KYC was not completed by the user; this is flagged in the individual evaluations to preserve the honesty of the method. This report is also deliberately limited to the heuristic analysis: complementary interviews and a user survey were planned but set aside after low audience uptake, so rather than lean on thin or unrepresentative data, the synthesis rests entirely on the structured heuristic evaluation.
 {% endhint %}
 
 ---

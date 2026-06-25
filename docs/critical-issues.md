@@ -9,7 +9,7 @@ Severity 4 is not "very bad" — it is **a block or irreversible financial risk*
 | App              | Sev-4 items | Nature of the critical issue                                  |
 | ---------------- | :---------: | ------------------------------------------------------------- |
 | **Orca**         |   30 / 30   | Total absence of onboarding (uniform marking)                 |
-| **Kamino**       |   29 / 30   | Total absence + user gets stuck in the flow                   |
+| **Kamino**       |   30 / 30   | Total absence of onboarding; in a lending context, the missing safety net is especially risky |
 | **Meteora**      |      3      | Cluttered design failed entirely + zero error prevention      |
 | **Trust Wallet** |      2      | Seed loss = permanent block; no support at the critical moment |
 | **Phantom**      |      1      | Seed phrase displayed with no inline support                  |

@@ -1,11 +1,7 @@
 # Design Guidelines
 
-Design principles, patterns, and components derived from the [research](../docs/). This is where the diagnosis turns into actionable recommendations.
+> 🚧 **Under construction.**
 
-## Contents
+This is where the research diagnosis becomes design: the onboarding flow and the components that fill the friction map identified in the [research](../docs/), plus guidance on how to use them.
 
-- `principles.md` — general onboarding principles <!-- to be filled in -->
-- `patterns/` — reusable patterns (seed phrase education, contextual help, inline glossary, gate anticipation, etc.)
-- [`components/`](components/) — design tokens and UI components that implement the patterns
-
-<!-- TODO: each pattern = one file in patterns/ with problem, solution, and example -->
+Nothing here is ready yet. Watch the repository for updates, or see [CONTRIBUTING](../CONTRIBUTING.md) to help build it.
