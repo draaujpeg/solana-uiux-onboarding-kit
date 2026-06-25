@@ -13,22 +13,22 @@ This work was supported by **SuperteamBR** (Solana).
 | Pillar | Folder | Description |
 |---|---|---|
 | 📖 Research synthesis (book) | [`docs/`](docs/) | The full heuristic analysis in chapters, published via GitBook |
-| 📐 Design Guidelines | [`design-guidelines/`](design-guidelines/) | Principles, patterns, and design components derived from the research |
-| 🤖 Claude skill | [`skill/`](skill/) | Installable skill + [how to use it](skill/using-the-skill.md) |
+| 📐 Design Guidelines | [`design-guidelines/`](design-guidelines/) | The flow and components that fill the friction map, plus how to use them (🚧 under construction) |
+| 🤖 Claude skill | [`skill/`](skill/) | The whole kit distilled into an easy-to-apply Claude Code skill (🚧 under construction) |
 
 ## Quick start
 
 1. **Read the research.** Start with the [synthesis](docs/) — 7 short chapters that go from the diagnosis to the proposed patterns (also publishable as a GitBook site).
-2. **Explore the design guidelines.** Browse [`design-guidelines/`](design-guidelines/) for the principles, patterns, and components that turn each gap into a buildable solution.
-3. **Use the Claude skill.** Follow [how to use it](skill/using-the-skill.md) to install the skill in Claude Code and apply the kit while designing or reviewing onboarding.
+2. **Explore the design guidelines** (🚧 under construction). [`design-guidelines/`](design-guidelines/) will turn each gap into a buildable flow and components.
+3. **Use the Claude skill** (🚧 under construction). [`skill/`](skill/) will let you apply the kit while designing or reviewing onboarding, right inside Claude Code.
 
 New here? [`getting-started.md`](getting-started.md) is the shortest path in.
 
 ## Status
 
-- ✅ **Research & synthesis** — complete ([`docs/`](docs/))
-- 🚧 **Design guidelines & components** — in progress
-- 🚧 **Claude skill** — in progress
+- ✅ **Research & synthesis**: complete ([`docs/`](docs/))
+- 🚧 **Design guidelines & components**: under construction
+- 🚧 **Claude skill**: under construction
 
 ## License
 
