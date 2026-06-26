@@ -4,7 +4,7 @@ description: The four gaps that reappear across almost every protocol, plus a fi
 
 # 4. Synthesis: what appeared most often
 
-Cross-referencing the 13 evaluations, **four gaps repeat across almost every protocol**, and it is the recurrence — not the isolated severity — that makes them natural candidates for design patterns.
+Cross-referencing the 13 evaluations, **four gaps repeat across almost every protocol**, and it is the recurrence, not the isolated severity, that makes them natural candidates for design patterns.
 
 ## 4.1 The seed phrase with no mental model
 
@@ -14,7 +14,7 @@ The most widespread problem in the sample. The recovery phrase is presented as a
 
 **Where it shows up:** Phantom, Solflare, Trust Wallet, Ledger; and, in milder variations, in Exodus and Tangem.
 
-## 4.2 The missing post-onboarding — the drop into the empty screen
+## 4.2 The missing post-onboarding: the drop into the empty screen
 
 Repeatedly, the flow ends abruptly: once setup is complete, the user is **abandoned in an empty wallet or a dense interface, with no tour, checklist, or indication of next steps**. Onboarding delivers the user but does not guide them on what to do next.
 
@@ -22,13 +22,13 @@ Repeatedly, the flow ends abruptly: once setup is complete, the user is **abando
 
 ## 4.3 The help that exists but lives outside the flow
 
-Almost every app has documentation, often good (24/7 live chat, structured docs). The problem is one of **location, not existence**: the help is in another tab, on another site, never on the screen at the moment the question arises. At the critical moments — safeguarding the seed, configuring security, a failed transaction — the user is alone.
+Almost every app has documentation, often good (24/7 live chat, structured docs). The problem is one of **location, not existence**: the help is in another tab, on another site, never on the screen at the moment the question arises. At the critical moments (safeguarding the seed, configuring security, a failed transaction) the user is alone.
 
 **Where it shows up:** an almost universal pattern in the sample.
 
 ## 4.4 Web3 jargon with no inline glossary
 
-"Swap", "Perps", "DCA", "slippage", "priority fee", "MEV protection", "blind signing", "LTV", "liquidation" — crypto-native terminology presented **without translation or explanation at the point of use**, assuming an expert.
+"Swap", "Perps", "DCA", "slippage", "priority fee", "MEV protection", "blind signing", "LTV", "liquidation": crypto-native terminology presented **without translation or explanation at the point of use**, assuming an expert.
 
 **Where it shows up:** strong in Jupiter, OKX, Meteora, DEX Screener, Kamino.
 

@@ -1,6 +1,6 @@
 # Solana UIUX Onboarding Kit
 
-> Research, design guidelines, components, and a Claude skill to fix onboarding for Solana ecosystem products.
+> A research-backed kit to fix Solana onboarding — easy to apply.
 
 The Solana ecosystem was built by and for people who already understand seed phrases, self-custody, and the irreversibility of transactions. For everyone arriving from Web2, onboarding is where adoption breaks — and, in a context of irreversible money, where users either protect themselves or lose funds. This kit turns a heuristic study into reusable solutions: the **research** that proves the problem is systemic, the **design guidelines and components** that solve it, and a **Claude skill** that applies them — so any product can fix its entry flow instead of repeating the same mistakes.
 
@@ -12,7 +12,7 @@ This work was supported by **SuperteamBR** (Solana).
 
 | Pillar | Folder | Description |
 |---|---|---|
-| 📖 Research synthesis (book) | [`docs/`](docs/) | The full heuristic analysis in chapters, published via GitBook |
+| 📖 Research synthesis (book) | [`docs/`](docs/) | The full heuristic analysis in chapters, published via [GitBook](https://matheus-draau.gitbook.io/solana-onboarding-kit) |
 | 📐 Design Guidelines | [`design-guidelines/`](design-guidelines/) | The flow and components that fill the friction map, plus how to use them (🚧 under construction) |
 | 🤖 Claude skill | [`skill/`](skill/) | The whole kit distilled into an easy-to-apply Claude Code skill (🚧 under construction) |
 

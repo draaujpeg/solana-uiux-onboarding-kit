@@ -27,9 +27,9 @@ The averages spread across a wide spectrum, from **0.53** (Tangem, the benchmark
 
 Grouping the results reveals three clear tiers:
 
-* **Mature (average < 0.60):** Tangem, Backpack, Exodus — cohesive onboardings whose weaknesses are explanatory, not structural.
-* **Functional but opaque (0.90 to 1.40):** DEX Screener, Solflare, OKX, Phantom, Trust Wallet, Jupiter — solid technical foundations that assume an already-fluent user and fail at the moments of greatest risk.
-* **No entry layer (1.80 to 4.00):** Ledger, Meteora, Orca, Kamino — from the overly long and technical onboarding (Ledger) to the categorical absence of any welcome at all (Orca, Kamino).
+* **Mature (average < 0.60):** Tangem, Backpack, Exodus, cohesive onboardings whose weaknesses are explanatory, not structural.
+* **Functional but opaque (0.90 to 1.40):** DEX Screener, Solflare, OKX, Phantom, Trust Wallet, Jupiter, solid technical foundations that assume an already-fluent user and fail at the moments of greatest risk.
+* **No entry layer (1.80 to 4.00):** Ledger, Meteora, Orca, Kamino, from the overly long and technical onboarding (Ledger) to the categorical absence of any welcome at all (Orca, Kamino).
 
 ---
 

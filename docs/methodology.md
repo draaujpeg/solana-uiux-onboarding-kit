@@ -6,7 +6,7 @@ description: The evaluation protocol, the severity scale, and the impact types.
 
 The evaluation adopted **Nielsen's 10 usability heuristics** ([Nielsen, 1994](https://www.nngroup.com/books/usability-engineering/)) as its protocol, but with a methodological adaptation that adds granularity: each heuristic was broken down into **3 objective questions**, totaling **30 items per application**. Each item received:
 
-* **A verdict** — _Yes_ (meets), _Partial_ (meets with caveats), or _No_ (does not meet);
+* **A verdict**: _Yes_ (meets), _Partial_ (meets with caveats), or _No_ (does not meet);
 * **A severity from 0 to 4**, calibrated by the impact on the user, not by the abstract presence of a problem:
 
 | Severity | Meaning                                       |
@@ -19,10 +19,10 @@ The evaluation adopted **Nielsen's 10 usability heuristics** ([Nielsen, 1994](ht
 
 Each app's final score is the **average of the 30 severities** (empty cell = 0). Every failure was further classified by **impact type**:
 
-* **Confusion** — does not understand;
-* **Friction** — extra effort;
-* **Block** — cannot proceed;
-* **Distrust** — loses confidence.
+* **Confusion**: does not understand;
+* **Friction**: extra effort;
+* **Block**: cannot proceed;
+* **Distrust**: loses confidence.
 
 This distinction matters because a problem that creates distrust in a context of irreversible money costs far more than one that creates mere friction.
 
