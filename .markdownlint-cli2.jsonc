@@ -1,0 +1,21 @@
+{
+  // Configuration for the Markdown style check (markdownlint-cli2).
+  // Which files to check, which to skip, and which rules to relax.
+  "globs": ["**/*.md"],
+  "ignores": [
+    "node_modules",
+    "analise-onboarding-heuristica.md",
+    "sintese-onboarding-design-system.md"
+  ],
+  "gitignore": true,
+  "config": {
+    // Rules — see https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
+    "default": true,
+    "MD013": false,            // line length: prose wraps freely
+    "MD033": false,            // inline HTML: allowed (GitBook hints/blocks)
+    "MD041": false,            // first line need not be a top-level heading
+    "MD060": false,            // table pipe spacing: not enforced
+    "MD036": false,            // emphasis used as heading: allowed
+    "MD024": { "siblings_only": true } // duplicate headings ok if not siblings
+  }
+}
