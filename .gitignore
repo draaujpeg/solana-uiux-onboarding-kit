@@ -12,3 +12,23 @@ scratchpad/
 # Dependencies (in case code components are added)
 node_modules/
 dist/
+
+# Secrets & credentials (never commit these)
+.env
+.env.*
+*.local
+*.pem
+*.key
+*.keystore
+*.p12
+id_rsa
+id_rsa.pub
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+
+# Local working drafts (not part of the published kit)
+analise-onboarding-heuristica.md
+sintese-onboarding-design-system.md

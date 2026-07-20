@@ -1,0 +1,6 @@
+# Links that the automated checker should skip.
+# These publisher / academic sites routinely block automated requests
+# (HTTP 403/418), which would cause false "broken link" failures even
+# though the links work fine in a real browser.
+dl.acm.org
+nngroup.com

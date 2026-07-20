@@ -1,0 +1,35 @@
+name: CI
+
+# Runs on every pull request and on pushes to main.
+# Two checks: Markdown style + broken-link detection.
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+# Least-privilege: the jobs only need to read the repository.
+permissions:
+  contents: read
+
+jobs:
+  markdownlint:
+    name: Markdown style
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Lint Markdown
+        run: npx -y markdownlint-cli2
+
+  links:
+    name: Link check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: "--no-progress --accept 200,206,429 './**/*.md'"
+          fail: true
