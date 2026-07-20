@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 📖 Read the research (GitBook)
+    url: https://matheus-draau.gitbook.io/solana-onboarding-kit
+    about: The full heuristic synthesis, published as a book. Read this before opening a content issue.
+  - name: 🤝 Contributing guide
+    url: https://github.com/draaujpeg/solana-uiux-onboarding-kit/blob/main/CONTRIBUTING.md
+    about: How this kit is structured and how to propose changes.

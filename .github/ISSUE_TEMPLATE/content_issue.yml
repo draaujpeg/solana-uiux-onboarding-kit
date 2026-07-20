@@ -1,0 +1,35 @@
+name: 🐞 Content or link issue
+description: Report an error, broken link, or something unclear in the research, guidelines, or skill.
+title: "[issue]: "
+labels: ["needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping improve the kit. Please check existing issues first to avoid duplicates.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which part of the kit?
+      options:
+        - Research / documentation (docs/)
+        - Design guidelines or components (design-guidelines/)
+        - Claude skill (skill/)
+        - Repository / tooling
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What's the problem?
+      description: Describe the error, broken link, or unclear passage. Include the file path or GitBook page.
+      placeholder: e.g. In docs/critical-issues.md the link to ... returns 404.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+      description: Optional. What should it say or do instead?
+    validations:
+      required: false
