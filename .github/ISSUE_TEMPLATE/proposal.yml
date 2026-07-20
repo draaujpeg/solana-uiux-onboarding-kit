@@ -1,0 +1,40 @@
+name: 💡 Proposal (guideline, pattern, or improvement)
+description: Suggest a new onboarding guideline, component, pattern, or an improvement to the kit.
+title: "[proposal]: "
+labels: ["proposal"]
+body:
+  - type: markdown
+    attributes:
+      value: Proposals shape where the design guidelines and skill go next. The more it ties back to the research, the stronger it is.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which pillar does this touch?
+      options:
+        - Design guidelines or components (design-guidelines/)
+        - Claude skill (skill/)
+        - Research / documentation (docs/)
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What onboarding problem does it address?
+      description: Which friction point or gap from the research does this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: The proposal
+      description: Describe the guideline, component, or change you have in mind.
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Optional. Examples, prior art, or products that do this well.
+    validations:
+      required: false
