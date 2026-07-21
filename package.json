@@ -1,0 +1,16 @@
+{
+  "name": "solana-uiux-onboarding-kit",
+  "private": true,
+  "description": "Research, design guidelines and a Claude skill for Solana onboarding",
+  "license": "MIT",
+  "workspaces": [
+    "demo",
+    "skills/solana-onboarding"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace demo",
+    "build": "npm run build --workspace demo",
+    "lint": "npm run lint --workspace demo",
+    "lint:md": "markdownlint-cli2"
+  }
+}

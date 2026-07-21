@@ -77,4 +77,8 @@
      phrase flow, wide for KYC and the post-onboarding welcome. */
   --so-width-compact: 440px;
   --so-width-wide: 640px;
+
+  /* Block alerts are not dialogs and keep their own measure, wide enough for
+     three lines of explanation without becoming a page-width banner. */
+  --so-width-alert: 480px;
 }

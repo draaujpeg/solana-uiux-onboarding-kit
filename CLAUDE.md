@@ -26,11 +26,14 @@ over as is.
 
 ## Commands
 
+Run these from the repository root. It is an npm workspace holding the demo app
+and the component source, so one `npm install` covers both.
+
 ```bash
-npx markdownlint-cli2       # must pass before committing any .md
-cd demo && npm run dev      # see the components running
-cd demo && npm run build    # compile and type-check, the checkpoint
-cd demo && npm run lint
+npx markdownlint-cli2   # must pass before committing any .md
+npm run dev             # see the components running
+npm run build           # compile and type-check, the checkpoint
+npm run lint
 ```
 
 ## Always
