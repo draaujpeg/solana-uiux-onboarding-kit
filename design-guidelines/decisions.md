@@ -26,15 +26,33 @@ post-onboarding welcome.
 
 ## Severity
 
-Severity is `neutral`, `warning` or `danger`, and it controls colour only. It
-never controls layout, and it is independent of which component is rendering: a
-block alert can be a warning, and an inline warning can be a danger. The mapping
-lives in [`severity.ts`](../skills/solana-onboarding/components/severity.ts).
+Severity is `neutral`, `warning` or `danger`, and it controls colour only, never
+layout. The palette lives in
+[`severity.ts`](../skills/solana-onboarding/components/severity.ts).
 
-**Open question.** Nothing yet says which severity a given message should use.
-Today each component is passed the colour its Figma frame happened to use, which
-is not a rule the skill can apply to an error nobody designed. Decide this before
-the error family is finished.
+In the error family, severity is not a choice. It follows placement:
+
+- A **block alert** appears after something stopped, and is always **danger**.
+- An **inline warning** appears beside a field before the user acts, and is
+  always **warning**.
+
+So the user learns one thing, and learns it in a single sitting: red means it
+stopped, amber means there is still time. That also gives the skill something it
+can apply to an error nobody designed, which is the situation it will actually be
+in. Because the colour is derived, these components do not take it as a prop. A
+rule that lives only in prose gets broken by the first person in a hurry.
+
+Two frames of the source disagree and are corrected: the slippage-exceeded alert
+becomes red, and the missing-gas inline warning becomes amber.
+
+The case for keeping the source's colours was that a swap cancelled by the user's
+own slippage limit is a protection working rather than a failure, and that
+painting it red teaches people their guardrail is a fault. Real, but too subtle
+to survive first contact with someone who has never seen the screen before, and
+it would cost the skill a judgement call on every new error.
+
+Outside the error family severity still varies with meaning: a confirmation's
+callout takes its colour from the risk level, neutral through danger.
 
 The destructive primary button is red at high and critical risk. In the Figma
 source every confirmation, including "close my account", uses the same dark

@@ -86,7 +86,6 @@ export default function ErrorsPage() {
       />
 
       <ErrorAlert
-        severity="warning"
         icon={<TrendingDown className={iconClass} />}
         title="Price moved during the swap"
         description="The price moved beyond the limit you set (0.5%). Your transaction was cancelled automatically, to protect you."

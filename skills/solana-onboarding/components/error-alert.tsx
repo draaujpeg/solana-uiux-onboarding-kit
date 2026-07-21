@@ -2,7 +2,7 @@
 
 import { Loader2, X } from "lucide-react";
 import type { ReactNode } from "react";
-import { severitySkin, type Severity } from "./severity";
+import { severitySkin } from "./severity";
 
 /**
  * The block alert: an error that stopped something, stated in the user's words,
@@ -13,12 +13,12 @@ import { severitySkin, type Severity } from "./severity";
  * alert names what happened, says what to do, and carries the control that does
  * it. A message with no action is a dead end and should not use this component.
  *
- * Severity is colour only. A block alert can be a warning, and an inline warning
- * elsewhere can be a danger, so nothing here is hard-coded per component.
+ * A block alert is always danger, because it appears after something stopped.
+ * Amber belongs to the inline warning, which appears beside a field while there
+ * is still time to act. Colour is therefore not a prop here: the user gets to
+ * learn one thing, red stopped me and amber is a heads-up, and the rule cannot
+ * be broken by whoever is in a hurry.
  */
-
-/** An error is either a failure or a caution. It is never neutral. */
-export type AlertSeverity = Extract<Severity, "danger" | "warning">;
 
 export interface ErrorAlertAction {
   label: string;
@@ -26,7 +26,6 @@ export interface ErrorAlertAction {
 }
 
 export interface ErrorAlertProps {
-  severity?: AlertSeverity;
   /**
    * A 16px icon. The caller supplies it rather than the component deriving it
    * from the code, so that the mapping from error to glyph lives in one place
@@ -58,7 +57,6 @@ export interface ErrorAlertProps {
 }
 
 export function ErrorAlert({
-  severity = "danger",
   icon,
   title,
   description,
@@ -71,7 +69,7 @@ export function ErrorAlert({
   dismissLabel = "Dismiss",
   className = "",
 }: ErrorAlertProps) {
-  const skin = severitySkin[severity];
+  const skin = severitySkin.danger;
 
   return (
     <div
@@ -126,11 +124,7 @@ export function ErrorAlert({
                   type="button"
                   onClick={primaryAction.onClick}
                   disabled={busy}
-                  className={`inline-flex items-center justify-center gap-2 rounded-[var(--so-radius-sm)] px-3 py-2 text-sm font-semibold disabled:opacity-70 ${
-                    severity === "danger"
-                      ? "bg-[var(--so-danger)] text-[var(--so-danger-fg)]"
-                      : "bg-[var(--so-warning)] text-[var(--so-warning-fg)]"
-                  }`}
+                  className="inline-flex items-center justify-center gap-2 rounded-[var(--so-radius-sm)] bg-[var(--so-danger)] px-3 py-2 text-sm font-semibold text-[var(--so-danger-fg)] disabled:opacity-70"
                 >
                   {busy && <Loader2 className="size-4 animate-spin" aria-hidden />}
                   {primaryAction.label}
