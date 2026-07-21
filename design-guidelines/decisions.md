@@ -31,21 +31,10 @@ never controls layout, and it is independent of which component is rendering: a
 block alert can be a warning, and an inline warning can be a danger. The mapping
 lives in [`severity.ts`](../skills/solana-onboarding/components/severity.ts).
 
-Which one to use:
-
-- **Danger** when the action failed, or its outcome is unknown, and something is
-  missing or broken before it can succeed. Network down, not enough balance, a
-  transaction that never confirmed, a wallet not connected, a document rejected.
-- **Warning** when nothing broke and a limit the user set fired on purpose. The
-  swap cancelled because the price passed the slippage tolerance is the case:
-  the product did exactly what it was told, and the protection worked.
-
-The distinction matters most for slippage. Painting it red would teach the user
-that their own guardrail is a fault, when the research asks for the opposite,
-that they come to read slippage as a shield. The tell is in the actions: a
-warning offers to adjust the limit that fired, and a danger has no limit to
-adjust. The source already followed this without stating it, since the inline
-high-slippage warning is amber while the inline missing-gas warning is red.
+**Open question.** Nothing yet says which severity a given message should use.
+Today each component is passed the colour its Figma frame happened to use, which
+is not a rule the skill can apply to an error nobody designed. Decide this before
+the error family is finished.
 
 The destructive primary button is red at high and critical risk. In the Figma
 source every confirmation, including "close my account", uses the same dark
