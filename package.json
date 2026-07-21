@@ -11,6 +11,7 @@
     "dev": "npm run dev --workspace demo",
     "build": "npm run build --workspace demo",
     "lint": "npm run lint --workspace demo",
-    "lint:md": "markdownlint-cli2"
+    "lint:md": "markdownlint-cli2",
+    "lint:tokens": "node scripts/check-tokens.mjs"
   }
 }

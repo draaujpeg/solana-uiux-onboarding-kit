@@ -1,8 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import { Ban, DollarSign, FileX, TrendingDown, Unplug, WifiOff } from "lucide-react";
+import {
+  AlertTriangle,
+  Ban,
+  DollarSign,
+  FileX,
+  TrendingDown,
+  Unplug,
+  WifiOff,
+} from "lucide-react";
 import { ErrorAlert } from "@kit/error-alert";
+import { InlineWarning } from "@kit/inline-warning";
 
 // The six block alerts of the actionable-error family, with the icons settled in
 // design-guidelines/decisions.md. The Figma source pasted one chain-link glyph
@@ -94,6 +103,58 @@ export default function ErrorsPage() {
         primaryAction={{ label: "Try again", onClick: () => {} }}
         onDismiss={() => {}}
       />
+
+      <header className="mt-6 flex flex-col gap-2">
+        <h2 className="text-xl font-semibold">Inline warnings</h2>
+        <p className="text-[var(--so-text-muted)]">
+          These sit beside the field they are about, while the user can still
+          change their mind. Amber, no code, no buttons, nothing to dismiss. The
+          cards around them are demo scaffolding, not part of the kit.
+        </p>
+      </header>
+
+      <section className="flex flex-col gap-4 rounded-[var(--so-radius-lg)] border border-[var(--so-border)] bg-[var(--so-surface)] p-6">
+        <h3 className="font-semibold">Configure swap</h3>
+        <label className="flex flex-col gap-2 text-sm">
+          <span className="text-[var(--so-text-muted)]">
+            Slippage tolerance
+          </span>
+          <span className="flex items-center gap-2 rounded-[var(--so-radius-sm)] border border-[var(--so-border)] px-3 py-2">
+            <input
+              defaultValue="5"
+              inputMode="decimal"
+              className="w-full bg-transparent outline-none"
+            />
+            <span className="text-[var(--so-text-muted)]">%</span>
+          </span>
+        </label>
+        <InlineWarning
+          icon={<AlertTriangle className={iconClass} />}
+          title="High slippage"
+          description="At 5%, you accept receiving up to 5% less than the amount shown. We recommend between 0.1% and 1% for most swaps."
+          link={{ label: "Why does this happen?", onClick: () => {} }}
+        />
+      </section>
+
+      <section className="flex flex-col gap-4 rounded-[var(--so-radius-lg)] border border-[var(--so-border)] bg-[var(--so-surface)] p-6">
+        <h3 className="font-semibold">Send tokens</h3>
+        <dl className="flex flex-col gap-2 text-sm">
+          <div className="flex justify-between">
+            <dt className="text-[var(--so-text-muted)]">Amount</dt>
+            <dd className="font-semibold">50 USDC</dd>
+          </div>
+          <div className="flex justify-between">
+            <dt className="text-[var(--so-text-muted)]">Network fee</dt>
+            <dd className="font-semibold">0.000005 SOL</dd>
+          </div>
+        </dl>
+        <InlineWarning
+          icon={<DollarSign className={iconClass} />}
+          title="Not enough SOL for the fee"
+          description="You have 0 SOL. You need at least 0.000005 SOL to pay the network fee, even though the transfer is in USDC."
+          link={{ label: "How do I get SOL?", onClick: () => {} }}
+        />
+      </section>
     </main>
   );
 }

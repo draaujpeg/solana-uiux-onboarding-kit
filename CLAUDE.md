@@ -34,6 +34,7 @@ npx markdownlint-cli2   # must pass before committing any .md
 npm run dev             # see the components running
 npm run build           # compile and type-check, the checkpoint
 npm run lint
+npm run lint:tokens     # fails on any literal colour inside a component
 ```
 
 ## Always

@@ -50,6 +50,8 @@ jobs:
           cache: npm
       - name: Install
         run: npm ci
+      - name: Check that components paint only with tokens
+        run: npm run lint:tokens
       - name: Lint
         run: npm run lint
       - name: Build and type-check
