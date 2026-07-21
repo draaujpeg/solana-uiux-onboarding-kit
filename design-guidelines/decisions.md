@@ -76,11 +76,12 @@ disconnected again. Confirming everything teaches people to click through, which
 is exactly what makes the one dialog that mattered invisible.
 
 So the first question is not "how risky is this", it is "can the user undo it".
-If yes, ship no dialog. If no, classify:
+If yes, ship no dialog. If no, classify. Moving assets always falls on the table,
+whatever the amount:
 
 | Level | Criterion | Examples |
 |---|---|---|
-| Low | Irreversible but routine, and low value | A small send to an address already used before, approving a single ordinary transaction |
+| Low | Irreversible, but the outcome is exactly what the user asked for | A send to an address already used before, approving a single ordinary transaction |
 | Medium | Moves value with an outcome the user cannot predict exactly | Swap, add liquidity, stake, send to a new address |
 | High | Removes or destroys something, but it can be redone without the seed | Withdraw all liquidity, close a position, unstake with a penalty |
 | Critical | Touches a key, a permission or custody itself, **or can only be undone with the 12 words** | Revoke access, unlimited token approval, export the seed, transfer custody, disconnect the account from the app |
@@ -88,9 +89,13 @@ If yes, ship no dialog. If no, classify:
 The critical row has two independent criteria. The second one catches the actions
 that look harmless, which is the whole reason it exists.
 
-Escalate one level when the amount is a large share of the balance, when the
-destination address has never been used before, or when nothing anywhere offers
-an undo.
+The level comes from the nature of the action, never from the amount. An earlier
+draft escalated a level when the sum was a large share of the balance, which
+required the product to hold a price feed, produced a threshold every product
+would tune differently, and bought nothing: an asset movement already gets a
+confirmation at any amount. The other two candidates for escalation were already
+covered, a new destination address is what makes a send medium in the first
+place, and "nothing offers an undo" is the condition for classifying at all.
 
 The governing rule is the last column of the critical row. Disconnecting an
 account reads as harmless, "just reconnect", and strands anyone who never wrote
