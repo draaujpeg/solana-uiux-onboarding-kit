@@ -66,14 +66,27 @@ severity may introduce a second colour.
 ## Risk classification
 
 The four confirmation screens are templates selected by risk, not a sequence.
-Before choosing one, classify the action:
+
+### When to classify at all
+
+Classification runs only for actions that cannot be undone, or can only be undone
+at a real cost. Everything the product can reverse on its own gets no
+confirmation: changing a setting, opening a screen, connecting an app that can be
+disconnected again. Confirming everything teaches people to click through, which
+is exactly what makes the one dialog that mattered invisible.
+
+So the first question is not "how risky is this", it is "can the user undo it".
+If yes, ship no dialog. If no, classify:
 
 | Level | Criterion | Examples |
 |---|---|---|
-| Low | Reversible, or low value | Connect an app, change a setting, small send to a saved address |
-| Medium | Moves value with a variable outcome | Swap, add liquidity, stake, send to a new address |
-| High | Removes or destroys something, but can be redone without the seed | Withdraw all liquidity, close a position, unstake with a penalty |
-| Critical | Touches a key or a permission, **or can only be undone with the 12 words** | Revoke access, unlimited token approval, export the seed, transfer custody, disconnect the account from the app |
+| Low | Irreversible but routine, and low value | A small send to an address already used before, approving a single ordinary transaction |
+| Medium | Moves value with an outcome the user cannot predict exactly | Swap, add liquidity, stake, send to a new address |
+| High | Removes or destroys something, but it can be redone without the seed | Withdraw all liquidity, close a position, unstake with a penalty |
+| Critical | Touches a key, a permission or custody itself, **or can only be undone with the 12 words** | Revoke access, unlimited token approval, export the seed, transfer custody, disconnect the account from the app |
+
+The critical row has two independent criteria. The second one catches the actions
+that look harmless, which is the whole reason it exists.
 
 Escalate one level when the amount is a large share of the balance, when the
 destination address has never been used before, or when nothing anywhere offers
@@ -89,6 +102,21 @@ Which blocks appear is driven by the content of the action, not by the level: a
 summary table when there are amounts at stake, a consequence list when something
 is destroyed, a type-to-confirm field when the level is critical. The template is
 the starting point, not a cage.
+
+### Where the skill uses this
+
+Two places, and they pull in opposite directions.
+
+In `implement`, the classification picks the template: the user describes the
+action, the skill places it on the table, and the template comes with its default
+blocks. It also answers "no dialog at all" when the action is reversible.
+
+In `audit`, the same table runs backwards. The skill looks for irreversible
+actions in the codebase that carry no confirmation, and for the more common
+failure, confirmations that exist but sit a level below the action they guard: a
+plain "are you sure?" in front of something that only the 12 words can undo.
+
+### Composing the blocks
 
 For the type-to-confirm field, the word is the verb of the action in capitals,
 `REVOKE`, `CLOSE`, not a generic `CONFIRM`: typing what will happen is the part
