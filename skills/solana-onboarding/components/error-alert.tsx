@@ -91,7 +91,12 @@ export function ErrorAlert({
             <ul className="flex flex-col gap-1 text-sm">
               {reasons.map((reason) => (
                 <li key={reason} className="flex gap-2">
-                  <X className="mt-1 size-3 shrink-0" aria-hidden />
+                  {/* A plain dot, so the only cross in the component stays the
+                      dismiss control and keeps meaning one thing. */}
+                  <span
+                    className="mt-2 size-1 shrink-0 rounded-full bg-current"
+                    aria-hidden
+                  />
                   <span>{reason}</span>
                 </li>
               ))}
