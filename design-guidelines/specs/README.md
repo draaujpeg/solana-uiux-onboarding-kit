@@ -39,8 +39,9 @@ values literally, so what matters is the semantic mapping, not every variable na
 
 ## Decisions that supersede these specs
 
-The specs describe the design as it was read. The following decisions were taken afterwards and win
-where they conflict.
+The specs describe the design as it was read. Decisions taken afterwards win where they conflict, and
+they all live in [`../decisions.md`](../decisions.md), which is the rule of record for building the
+components. The headline ones:
 
 1. Icon family is Lucide. Corrections: KYC alert uses `file-x`, slippage alert uses `trending-down`,
    wallet-not-connected uses `unplug`, the critical confirmation header uses `shield-off`. Callouts
