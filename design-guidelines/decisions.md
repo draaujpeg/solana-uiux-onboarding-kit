@@ -159,8 +159,15 @@ to two.
 
 ## Component conventions
 
-The secondary action is a ghost button, text only, on every screen. The source
-uses a filled grey once, on the KYC rejection, which competes with the primary.
+The secondary action is an outlined button: a 1px border in the current text
+colour over a transparent fill, on every screen. The source is inconsistent,
+using a ghost on some frames and a filled grey on the KYC rejection, which
+competes with the primary.
+
+An earlier draft of this rule chose the ghost. Seeing it built showed why that
+was wrong: inside a tinted panel, text with no border reads as part of the
+message rather than as something to press. The outline keeps the hierarchy, since
+only the primary is filled, while still looking like a control.
 
 Titles ask a question when a decision is being requested, "Close this account?",
 and state a fact when the screen informs, "Your wallet is ready".

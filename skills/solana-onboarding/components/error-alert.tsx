@@ -104,11 +104,13 @@ export function ErrorAlert({
             // layout on a narrow one puts the resolving action on top.
             <div className="mt-2 flex flex-col-reverse gap-2 sm:flex-row sm:items-center">
               {secondaryAction && (
+                // Outlined, not text-only: inside a tinted panel a borderless
+                // label reads as part of the message rather than as a control.
                 <button
                   type="button"
                   onClick={secondaryAction.onClick}
                   disabled={busy}
-                  className="rounded-[var(--so-radius-sm)] px-3 py-2 text-sm font-semibold underline underline-offset-2 disabled:opacity-50"
+                  className={`rounded-[var(--so-radius-sm)] border bg-transparent px-3 py-2 text-sm font-semibold disabled:opacity-50 ${skin.border}`}
                 >
                   {secondaryAction.label}
                 </button>
