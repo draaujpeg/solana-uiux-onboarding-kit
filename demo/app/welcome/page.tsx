@@ -88,7 +88,7 @@ export default function WelcomePage() {
         steps={[
           {
             title: "Connect your wallet",
-            description: "Phantom, Solflare or any compatible Solana wallet.",
+            description: "Any Solana wallet the product supports.",
           },
           {
             title: "Choose the tokens",

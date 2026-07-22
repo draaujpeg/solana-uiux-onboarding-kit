@@ -8,16 +8,17 @@ to do next. Onboarding delivered them and then abandoned them.
 
 What the thirteen showed:
 
-- **Phantom** ends both its flows with "Get started" and drops the user straight
-  into the main wallet screen, which is empty.
-- **OKX** is the sharpest case. Immediately after finishing verification the user
-  meets an interface of overwhelming density, even in its Lite Mode, with an
-  unexplained toggle between two products and no first-steps screen at all. A
-  user who completed KYC and wants to buy crypto has to find out where that
-  lives on their own.
-- **Backpack** has no guidance after KYC either, despite being one of the three
-  best products in the sample.
-- Even **Tangem**, the reference, lacks a post-onboarding step.
+- A major wallet ends both its flows with a "get started" button and drops the
+  user straight into the main screen, which is empty.
+- A large exchange is the sharpest case. Immediately after finishing
+  verification the user meets an interface of overwhelming density, even in its
+  simplified mode, with an unexplained toggle between two products and no
+  first-steps screen at all. Someone who completed verification in order to buy
+  crypto has to find out where that lives on their own.
+- Another exchange offers no guidance after verification either, despite ranking
+  among the three best products in the sample.
+- Even the highest-scoring product of all, which has no critical items anywhere,
+  lacks a post-onboarding step.
 
 This is a gap that good products have. It is not a symptom of carelessness, it
 is a symptom of finishing at the wrong line.

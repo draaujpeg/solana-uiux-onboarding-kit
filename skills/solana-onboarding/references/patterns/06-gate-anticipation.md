@@ -8,16 +8,17 @@ mentioned. The cost is not the requirement, it is the sequence.
 
 What the thirteen showed:
 
-- **Backpack** makes verification a total block: without it, no trading feature
-  is available at all. The study scored the surprise, not the requirement,
-  because it breaks the expectation set at the start of the flow.
-- **Ledger** hides the sharpest example. Interacting with Solana dApps needs
-  blind signing enabled manually on the device, a step that is not documented in
-  the main interface and that **silently blocks transactions without explaining
-  why**. The user is stuck with no idea what is wrong.
-- **OKX** gates features by region and by verification level, discoverable only
-  on reaching them, which the study recorded as the most unexpected behaviour in
-  the sample.
+- An exchange with a built-in wallet makes verification a total block: without
+  it, no trading feature is available at all. The study scored the surprise, not
+  the requirement, because it breaks the expectation set at the start of the
+  flow.
+- A hardware wallet hides the sharpest example. Interacting with Solana dApps
+  needs blind signing enabled manually on the device, a step that is not
+  documented in the main interface and that **silently blocks transactions
+  without explaining why**. The user is stuck with no idea what is wrong.
+- A large exchange gates features by region and by verification level,
+  discoverable only on reaching them, which the study recorded as the most
+  unexpected behaviour in the sample.
 
 Blind signing is worth dwelling on: it is one point that combines jargon,
 missing contextual help and a silent block. Three of the kit's patterns fail at

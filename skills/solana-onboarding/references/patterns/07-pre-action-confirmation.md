@@ -8,18 +8,19 @@ support queue. The check before the button is the only check there is.
 
 What the thirteen showed:
 
-- **Jupiter** has no review screen of its own. It hands the confirmation
-  straight to the wallet, without highlighting harmful slippage, without warning
-  about risky tokens, and without ever explaining irreversibility.
-- **Meteora** failed the entire error-prevention heuristic: no prevention, no
-  validation, no warning before actions with no way back, in a product where
+- A leading aggregator has no review screen of its own. It hands the
+  confirmation straight to the wallet, without highlighting harmful slippage,
+  without warning about risky tokens, and without ever explaining
+  irreversibility.
+- A liquidity DEX failed the entire error-prevention heuristic: no prevention,
+  no validation, no warning before actions with no way back, in a product where
   every action moves money.
-- **Solflare** lacks any prominent, plain-language warning that blockchain
+- A major wallet has no prominent, plain-language warning that blockchain
   actions are irreversible.
-- **Kamino**, in lending, exposes collateral and liquidation with no protection
-  layer at all.
-- On the other side, **Exodus** and **Tangem** score zero on this heuristic, and
-  both are in the top three overall. The correlation is not a coincidence.
+- A lending product exposes collateral and liquidation with no protection layer
+  at all.
+- On the other side, the two products that score zero on this heuristic are both
+  in the sample's top three overall. The correlation is not a coincidence.
 
 ## When it applies
 
