@@ -169,9 +169,9 @@ export function ConfirmationDialog({
             severity="danger"
             heading="Only your recovery phrase can undo this"
           >
-            Getting this wallet back requires your 12 word recovery phrase. If
-            you have not written it down, no one can restore access, not this
-            app and not anyone else.
+            Getting this wallet back requires your recovery phrase. If you have
+            not written it down, no one can restore access, not this app and not
+            anyone else.
           </Callout>
         )}
 

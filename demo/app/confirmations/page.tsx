@@ -167,7 +167,7 @@ export default function ConfirmationsPage() {
         title="Disconnect this account?"
         description="This removes the account from this app. It looks reversible, and for most people it is not."
         consequences={[
-          "Reconnecting requires your 12 word recovery phrase.",
+          "Reconnecting requires your recovery phrase.",
           "If you never wrote the phrase down, the account cannot be recovered by anyone.",
           "Your tokens stay on the network, but you will need the phrase to reach them.",
         ]}

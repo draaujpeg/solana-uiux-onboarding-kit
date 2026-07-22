@@ -107,7 +107,7 @@ whatever the amount:
 | Low | Irreversible, but the outcome is exactly what the user asked for | A send to an address already used before, approving a single ordinary transaction |
 | Medium | Moves value with an outcome the user cannot predict exactly | Swap, add liquidity, stake, send to a new address |
 | High | Removes or destroys something, but it can be redone without the seed | Withdraw all liquidity, close a position, unstake with a penalty |
-| Critical | Touches a key, a permission or custody itself, **or can only be undone with the 12 words** | Revoke access, unlimited token approval, export the seed, transfer custody, disconnect the account from the app |
+| Critical | Touches a key, a permission or custody itself, **or can only be undone with the recovery phrase** | Revoke access, unlimited token approval, export the seed, transfer custody, disconnect the account from the app |
 
 The critical row has two independent criteria. The second one catches the actions
 that look harmless, which is the whole reason it exists.
@@ -142,7 +142,7 @@ blocks. It also answers "no dialog at all" when the action is reversible.
 In `audit`, the same table runs backwards. The skill looks for irreversible
 actions in the codebase that carry no confirmation, and for the more common
 failure, confirmations that exist but sit a level below the action they guard: a
-plain "are you sure?" in front of something that only the 12 words can undo.
+plain "are you sure?" in front of something only the recovery phrase can undo.
 
 ### Composing the blocks
 
@@ -156,7 +156,7 @@ than accepting it: a build fails if `risk="critical"` arrives without one.
 
 Critical actions that detach a wallet or an account, removing it, disconnecting
 it, deleting the app's copy of it, also carry the recovery notice, which states
-that only the 12 word phrase can restore access. Its wording belongs to the kit
+that only the recovery phrase can restore access. Its wording belongs to the kit
 and products do not change it. Everywhere else the skill proposes copy and the
 user edits it; not here, because this is the sentence the whole kit exists to
 make somebody read, and the actions that need it are exactly the ones that read
