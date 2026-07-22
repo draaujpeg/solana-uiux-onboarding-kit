@@ -1,0 +1,15 @@
+{
+  "name": "@solana-onboarding/components",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Source of the copy-in components. Not published: the skill copies these files into the host project, so this manifest exists to declare what that project must have installed, and to let the demo resolve them from outside its own folder.",
+  "dependencies": {
+    "lucide-react": "^1.25.0"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "devDependencies": {
+    "@types/react": "^19"
+  }
+}

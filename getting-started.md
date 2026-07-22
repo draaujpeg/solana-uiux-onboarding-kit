@@ -12,6 +12,6 @@ The [design guidelines](design-guidelines/) will turn each gap in the research i
 
 ## Claude skill (🚧 under construction)
 
-The [Claude skill](skill/) will distil the whole kit into an easy-to-apply capability inside Claude Code. Not ready yet.
+The [Claude skill](skills/solana-onboarding/) will distil the whole kit into an easy-to-apply capability inside Claude Code. Not ready yet.
 
 Want to help build the next phases? See [CONTRIBUTING](CONTRIBUTING.md).

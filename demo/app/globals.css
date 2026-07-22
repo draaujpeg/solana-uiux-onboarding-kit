@@ -1,0 +1,23 @@
+@import "tailwindcss";
+@import "../../skills/solana-onboarding/components/tokens.css";
+
+/* The components live outside this app, so Tailwind has to be told to scan
+   them. In a host project the components sit inside the app and this line is
+   not needed. */
+@source "../../skills/solana-onboarding/components";
+
+/*
+  The demo hosts the kit's components in a deliberately plain shell, so whatever
+  you see on screen comes from the component and its tokens, never from the page.
+
+  To check that a component adapts to a host brand, override a token below and
+  reload: every component should follow, with no edit of its own. The kit's
+  tokens read the shadcn/ui names first, so declaring `--destructive` here is
+  enough to retheme every alert.
+*/
+
+body {
+  background: var(--so-surface-muted);
+  color: var(--so-text);
+  font-family: var(--so-font-sans);
+}

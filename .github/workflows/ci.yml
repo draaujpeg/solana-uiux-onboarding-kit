@@ -1,7 +1,7 @@
 name: CI
 
 # Runs on every pull request and on pushes to main.
-# Two checks: Markdown style + broken-link detection.
+# Three checks: Markdown style, broken links, and the component library.
 on:
   pull_request:
   push:
@@ -33,3 +33,32 @@ jobs:
         with:
           args: "--no-progress --accept 200,206,429 './**/*.md'"
           fail: true
+
+  # The components live in skills/solana-onboarding/components and are rendered
+  # by the demo app, which imports them rather than copying them. Building the
+  # demo therefore type-checks and compiles the components themselves: this job
+  # is the compile checkpoint the build plan relies on, so that "it worked on my
+  # machine" stops being the only evidence.
+  app:
+    name: Component library
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      # The lockfile has to carry every platform's native binaries, not just
+      # those of whoever last ran an install. Several dependencies here ship one
+      # binary per architecture, and an install that starts from an existing
+      # node_modules records only the ones already on disk, which leaves a Linux
+      # runner without lightningcss and fails the build. Regenerate the lockfile
+      # from a clean tree, never from a partial one, and this stays true.
+      - name: Install
+        run: npm ci --no-audit --no-fund
+      - name: Check that components paint only with tokens
+        run: npm run lint:tokens
+      - name: Lint
+        run: npm run lint
+      - name: Build and type-check
+        run: npm run build

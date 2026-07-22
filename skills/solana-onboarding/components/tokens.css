@@ -1,0 +1,84 @@
+/*
+  Solana Onboarding Kit, design tokens.
+
+  Every component in this kit paints with the `--so-*` variables below and never
+  with a literal colour. That is what lets a component look native inside any
+  product it is copied into.
+
+  How adaptation works:
+
+  - Where a host project already has an equivalent token, the variable reads it
+    first and falls back to the kit's own value. The fallback names follow the
+    shadcn/ui convention (`--background`, `--foreground`, `--border`, `--primary`,
+    `--destructive`, `--radius`), which is the most common setup in the React and
+    Solana ecosystem. A project using those names is themed automatically, with
+    no edits.
+  - Where a host project usually has nothing (alert tints, warning and success
+    tones), the kit ships its own value, calibrated on the Figma source. Override
+    any single one by redeclaring it after this file is imported.
+
+  Import this once, before the components, then override as needed:
+
+      @import "./tokens.css";
+
+      :root {
+        --so-warning: #a86400;
+      }
+*/
+
+:root {
+  /* Surfaces */
+  --so-surface: var(--card, var(--background, #ffffff));
+  --so-surface-muted: var(--muted, #f5f5f5);
+  --so-scrim: rgb(20 20 20 / 0.8);
+
+  /* Text */
+  --so-text: var(--foreground, #1e1e1e);
+  --so-text-muted: var(--muted-foreground, #757575);
+  --so-text-subtle: #b3b3b3;
+
+  /* Borders and radii */
+  --so-border: var(--border, #d9d9d9);
+  --so-radius-sm: var(--radius, 8px);
+  --so-radius-lg: 16px;
+
+  /* Primary action */
+  --so-primary: var(--primary, #2c2c2c);
+  --so-primary-fg: var(--primary-foreground, #f5f5f5);
+
+  /* Danger. Used by error alerts and by high and critical confirmations. */
+  --so-danger: var(--destructive, #ec221f);
+  --so-danger-fg: #ffffff;
+  --so-danger-surface: #fee9e7;
+  --so-danger-border: #ec221f;
+  --so-danger-text: #900b09;
+
+  /* Warning. Used by inline warnings and by medium confirmations. */
+  --so-warning: #bf6a02;
+  --so-warning-fg: #ffffff;
+  --so-warning-surface: #fff1c2;
+  --so-warning-border: #bf6a02;
+  --so-warning-text: #682d03;
+
+  /* Success. Used by the seed phrase confirmation and the KYC timeline. */
+  --so-success: #02542d;
+  --so-success-surface: #aff4c6;
+  --so-success-text: #02542d;
+
+  /* Disabled */
+  --so-disabled-surface: #d9d9d9;
+  --so-disabled-text: #b3b3b3;
+
+  /* Typography. The mono face is reserved for machine-readable error codes. */
+  --so-font-sans: var(--font-sans, "Inter", system-ui, sans-serif);
+  --so-font-mono: var(--font-mono, "Roboto Mono", ui-monospace, monospace);
+
+  /* Dialog widths. Two sizes only: compact for confirmations and the seed
+     phrase flow, wide for KYC and the post-onboarding welcome. */
+  --so-width-compact: 440px;
+  --so-width-wide: 640px;
+
+  /* Block alerts are not dialogs and keep their own measure, wide enough for
+     three lines of explanation without becoming a page-width banner. */
+  --so-width-alert: 480px;
+}
