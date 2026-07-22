@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
+import { ThemeFromQuery } from "./theme-from-query";
 
 // Inter and Roboto Mono are the faces the Figma source uses. The mono face is
 // reserved for machine-readable error codes.
@@ -29,7 +30,10 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${robotoMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <ThemeFromQuery />
+        {children}
+      </body>
     </html>
   );
 }

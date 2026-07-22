@@ -68,7 +68,6 @@
 
   /* Success. Used by the seed phrase confirmation and the KYC timeline. */
   --so-success: #14875f;
-  --so-success-surface: #aff4c6;
   --so-success-text: #02542d;
 
   --so-disabled-surface: #d9d9d9;
@@ -121,7 +120,6 @@
     --so-warning-border: color-mix(in oklab, var(--so-warning) 55%, var(--so-surface));
     --so-warning-text: color-mix(in oklab, var(--so-warning) 60%, var(--so-text));
 
-    --so-success-surface: color-mix(in oklab, var(--so-success) 16%, var(--so-surface));
     --so-success-text: color-mix(in oklab, var(--so-success) 65%, var(--so-text));
   }
 }
