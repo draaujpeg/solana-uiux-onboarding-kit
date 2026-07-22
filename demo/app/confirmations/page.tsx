@@ -171,10 +171,7 @@ export default function ConfirmationsPage() {
           "If you never wrote the phrase down, the account cannot be recovered by anyone.",
           "Your tokens stay on the network, but you will need the phrase to reach them.",
         ]}
-        callout={{
-          heading: "Only your recovery phrase can undo this",
-          body: "No one at this app, or anywhere else, can restore access without it.",
-        }}
+        seedRecoveryNotice
         confirmPhrase="DISCONNECT"
         confirmLabel="Disconnect account"
       />

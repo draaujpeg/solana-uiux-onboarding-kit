@@ -151,6 +151,24 @@ For the type-to-confirm field, the word is the verb of the action in capitals,
 that makes the user read it. The comparison ignores case. The friction that
 protects is having to type the word, not getting the caps lock right.
 
+A critical action must be typed out, and the component requires the phrase rather
+than accepting it: a build fails if `risk="critical"` arrives without one.
+
+Critical actions that detach a wallet or an account, removing it, disconnecting
+it, deleting the app's copy of it, also carry the recovery notice, which states
+that only the 12 word phrase can restore access. Its wording belongs to the kit
+and products do not change it. Everywhere else the skill proposes copy and the
+user edits it; not here, because this is the sentence the whole kit exists to
+make somebody read, and the actions that need it are exactly the ones that read
+as harmless.
+
+### The full procedure
+
+The steps a person or the skill walks to classify an action, with the catalogue
+of known Solana actions and the fallback questions, live in
+[`risk-classification.md`](../skills/solana-onboarding/references/risk-classification.md).
+It is written to be applied, including backwards in audit mode.
+
 ## Accessibility
 
 Every dialog closes, with a visible control and with Escape, and traps focus

@@ -37,12 +37,11 @@ const calloutSeverity: Record<Risk, Severity> = {
 
 const isDestructive = (risk: Risk) => risk === "high" || risk === "critical";
 
-export interface ConfirmationDialogProps {
+interface CommonProps {
   open: boolean;
   /** Cancel, close, Escape and the backdrop all land here. */
   onCancel: () => void;
   onConfirm: () => void;
-  risk: Risk;
   /**
    * A 24px icon naming the action, not the risk. Send, swap, trash, shield-off:
    * the same level covers actions that look nothing alike.
@@ -57,13 +56,6 @@ export interface ConfirmationDialogProps {
   consequences?: string[];
   /** The one thing the user must not miss. Its colour comes from the risk. */
   callout?: { heading?: string; body: ReactNode };
-  /**
-   * Typing this word unlocks the confirm button. Use the verb of the action in
-   * capitals, REVOKE rather than CONFIRM: typing what will happen is the part
-   * that makes the user read it. The comparison ignores case, since the friction
-   * that protects is having to type the word, not the caps lock.
-   */
-  confirmPhrase?: string;
   confirmPhraseLabel?: (phrase: string) => ReactNode;
   confirmPhrasePlaceholder?: string;
   confirmLabel: string;
@@ -71,6 +63,42 @@ export interface ConfirmationDialogProps {
   /** While true the confirm button shows progress and both actions are inert. */
   busy?: boolean;
 }
+
+/**
+ * A critical action must be typed out, so the phrase is required rather than
+ * optional. The rule was already written down, and a rule that lives only in
+ * prose is broken by the first person in a hurry.
+ */
+interface CriticalProps {
+  risk: "critical";
+  /**
+   * Typing this word unlocks the confirm button. Use the verb of the action in
+   * capitals, REVOKE rather than CONFIRM: typing what will happen is the part
+   * that makes the user read it. The comparison ignores case, since the friction
+   * that protects is having to type the word, not the caps lock.
+   */
+  confirmPhrase: string;
+  /**
+   * For the critical actions that detach a wallet or an account: removing it,
+   * disconnecting it, deleting the app's copy of it. These read as harmless,
+   * and the person who never wrote the phrase down loses everything. Setting
+   * this renders the kit's own wording for that, which is deliberately not
+   * customisable: it is the single sentence the whole kit exists to make sure
+   * somebody reads.
+   */
+  seedRecoveryNotice?: boolean;
+}
+
+interface LesserRiskProps {
+  risk: "low" | "medium" | "high";
+  /** Only critical actions are typed out. Classify it critical, or drop this. */
+  confirmPhrase?: never;
+  /** Only critical actions can strand a user behind their recovery phrase. */
+  seedRecoveryNotice?: never;
+}
+
+export type ConfirmationDialogProps = CommonProps &
+  (CriticalProps | LesserRiskProps);
 
 export function ConfirmationDialog({
   open,
@@ -84,6 +112,7 @@ export function ConfirmationDialog({
   consequences,
   callout,
   confirmPhrase,
+  seedRecoveryNotice,
   confirmPhraseLabel,
   confirmPhrasePlaceholder = "Type here",
   confirmLabel,
@@ -133,6 +162,17 @@ export function ConfirmationDialog({
               </li>
             ))}
           </ul>
+        )}
+
+        {seedRecoveryNotice && (
+          <Callout
+            severity="danger"
+            heading="Only your recovery phrase can undo this"
+          >
+            Getting this wallet back requires your 12 word recovery phrase. If
+            you have not written it down, no one can restore access, not this
+            app and not anyone else.
+          </Callout>
         )}
 
         {callout && (
