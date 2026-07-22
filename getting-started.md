@@ -2,16 +2,54 @@
 
 The shortest path into the Solana UIUX Onboarding Kit.
 
-## Start with the research
+## Install the skill
 
-The kit is grounded in a heuristic study of 13 Solana onboarding flows. Read the [research synthesis](docs/): seven short chapters that go from the diagnosis to the patterns worth systematising.
+The kit is an agent skill. Install it and your agent can diagnose an onboarding
+flow, or build the screen that fixes one, inside your own project.
 
-## Design guidelines (🚧 under construction)
+```bash
+npx skills add draaujpeg/solana-uiux-onboarding-kit
+```
 
-The [design guidelines](design-guidelines/) will turn each gap in the research into a buildable onboarding flow and components. Not ready yet.
+Or clone the repository and run the installer, which supports `--project` to
+install into one project and `--link` to keep it updated with a git pull:
 
-## Claude skill (🚧 under construction)
+```bash
+./install.sh
+```
 
-The [Claude skill](skills/solana-onboarding/) will distil the whole kit into an easy-to-apply capability inside Claude Code. Not ready yet.
+It works with any agent that reads Agent Skills: Claude Code, Codex, Copilot,
+Gemini CLI, Cursor, Windsurf, Cline, OpenCode.
+
+## Use it
+
+Nothing to memorise. Say what you have:
+
+- "Review the onboarding in this repo" runs the audit, scoring the flow against
+  the same thirty questions the research used, and reports what is missing.
+- "Our swap shows `custom program error: 0x1` and users vanish" finds the
+  pattern for that failure and builds the screen.
+- "We need a confirmation before users revoke access" classifies how risky the
+  action is, and tells you if it needs no dialog at all.
+
+The components are copied into your project. They are not a dependency, there is
+nothing to keep updated, and you own and edit the result.
+
+## Read the research
+
+The kit is grounded in a heuristic study of 13 Solana onboarding flows. The
+[research synthesis](docs/) is eight short chapters going from the diagnosis to
+the patterns worth systematising, plus a [help page](docs/help.md) written for
+the end user rather than for the team.
+
+## See the components
+
+The [design guidelines](design-guidelines/) hold the component exports, the
+written specs, and the rules they are built to. To see them running:
+
+```bash
+npm install
+npm run dev
+```
 
 Want to help build the next phases? See [CONTRIBUTING](CONTRIBUTING.md).

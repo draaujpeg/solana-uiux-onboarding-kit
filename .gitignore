@@ -32,3 +32,9 @@ id_rsa.pub
 # Local working drafts (not part of the published kit)
 analise-onboarding-heuristica.md
 sintese-onboarding-design-system.md
+
+# Raw evaluation data (per-app scores, named products). Working material, not
+# part of the published kit: the research chapters carry what is meant to be
+# public, and the skill is deliberately anonymous.
+heuristic_avaliation.xlsx
+*.xlsx

@@ -24,6 +24,25 @@ Modal widths are two, not four: `--so-width-compact` (440px) for confirmations
 and the seed phrase flow, `--so-width-wide` (640px) for KYC and the
 post-onboarding welcome.
 
+**Dark mode follows the product, not the machine.** The kit never reads
+`prefers-color-scheme`. It reads the surface and text the host declares, and
+mixes everything else against them, so a dark product gets dark alert tints and
+a light-only product stays light even on a machine that prefers dark.
+
+That distinction is the whole design. Keying off the operating system would
+mean a product with no dark mode showing dark alerts on its white screen, which
+is a worse failure than having no dark mode at all.
+
+Two consequences worth knowing. A brand colour now arrives whole: setting
+`--so-danger` moves its tint, its border and its text together, where before it
+took four overrides. And a host that declares no background at all still gets
+the values the Figma source was drawn with, since those are the base layer.
+
+The derived half sits behind `@supports (color: color-mix(...))`, with the
+literal values outside it. Not decoration: without that split the bundler
+synthesises its own fallback, which resolves an alert tint to solid red and its
+text to the same red.
+
 ## Severity
 
 Severity is `neutral`, `warning` or `danger`, and it controls colour only, never

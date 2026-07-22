@@ -20,9 +20,9 @@ depends on an outside service, so the whole path is ours to design.
 
 "Continue with Google", and the same for Apple, email or a passkey. This is not a
 hypothetical convenience, it is a product category: embedded wallet providers
-hold or split the key material so the user never sees a phrase. Privy, Web3Auth,
-Dynamic, Turnkey and Magic are examples; each product picks its own, and the list
-here is illustrative rather than a recommendation.
+hold or split the key material so the user never sees a phrase. Several
+established ones exist and each product picks its own, so ask which rather than
+assuming, and do not recommend one.
 
 **Where the kit stops.** The moment the user picks this option, the provider's
 SDK owns the sequence: the OAuth window, the account creation, whatever recovery
