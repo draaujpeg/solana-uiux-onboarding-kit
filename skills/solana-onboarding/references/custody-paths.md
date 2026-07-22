@@ -52,9 +52,19 @@ place.
 
 This is the screen an attacker most wants to imitate, because a page that looks
 like it is the entire attack. So it states that the phrase never leaves the
-device and that no support agent will ever ask for it. That sentence is worth
-more than it looks: a user who reads it here has a chance of noticing its absence
-on the fake version.
+device, that no support agent will ever ask for it, and that it should never be
+shown to anyone. That wording is worth more than it looks: a user who reads it
+here has a chance of noticing its absence on the fake version.
+
+Numbered slots, and nothing masked. Word order is part of the key, so a numbered
+slot shows where a word went missing in a way a wrapped sentence never does, and
+hiding the characters would fight the only thing the screen is for, which is
+checking word by word against the paper. Pasting into a slot fills the rest from
+there, since phrases live in password managers and the alternative is retyping
+from a photograph.
+
+Twelve slots by default, and the count is a prop. The kit owns the shape of the
+flow, not the rules of a particular wallet.
 
 Length is checked, spelling is not. Only the wallet can say whether a phrase is
 valid, and a component that guesses will reject correct phrases in wordlists it
