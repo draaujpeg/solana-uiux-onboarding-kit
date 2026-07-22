@@ -35,7 +35,7 @@ export default function GlossaryPage() {
         <h2 className="font-semibold">Swap details</h2>
         <dl className="flex flex-col gap-3 text-sm">
           <div className="flex items-center justify-between gap-4">
-            <dt>
+            <dt className="text-[var(--so-text-muted)]">
               <GlossaryTooltip
                 trigger="icon"
                 placement="bottom"
@@ -48,7 +48,7 @@ export default function GlossaryPage() {
             <dd className="font-semibold">0.5%</dd>
           </div>
           <div className="flex items-center justify-between gap-4">
-            <dt>
+            <dt className="text-[var(--so-text-muted)]">
               <GlossaryTooltip
                 trigger="icon"
                 placement="bottom"

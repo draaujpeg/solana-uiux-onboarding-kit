@@ -86,7 +86,10 @@ export function ErrorAlert({
           <p className="text-sm leading-relaxed">{description}</p>
 
           {reasons && reasons.length > 0 && (
-            <ul className="flex flex-col gap-1 text-sm">
+            // Boxed, because these are findings from somewhere else, usually a
+            // verification provider, rather than more of the sentence above.
+            // The border says where the alert's own voice stops.
+            <ul className="flex flex-col gap-2 rounded-[var(--so-radius-sm)] border border-current/30 p-3 text-sm">
               {reasons.map((reason) => (
                 <li key={reason} className="flex gap-2">
                   {/* A plain dot, so the only cross in the component stays the

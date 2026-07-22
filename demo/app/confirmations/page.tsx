@@ -33,11 +33,15 @@ export default function ConfirmationsPage() {
     { which: "low", label: "Send 5 SOL", note: "Low risk" },
     { which: "medium", label: "Swap 50 USDC", note: "Medium risk" },
     { which: "high", label: "Withdraw all liquidity", note: "High risk" },
-    { which: "revoke", label: "Revoke app access", note: "Critical risk" },
+    {
+      which: "revoke",
+      label: "Revoke app access",
+      note: "Critical risk, with only the typed phrase",
+    },
     {
       which: "disconnect",
       label: "Disconnect account",
-      note: "Critical risk, reclassified from the source",
+      note: "Critical risk, with consequences and the recovery notice as well",
     },
   ];
 

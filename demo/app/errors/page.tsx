@@ -50,13 +50,7 @@ export default function ErrorsPage() {
       <ErrorAlert
         icon={<DollarSign className={iconClass} />}
         title="Insufficient balance"
-        description={
-          <>
-            You have <strong>12.4 USDC</strong>, but this transaction needs{" "}
-            <strong>50 USDC</strong> plus the network fee. Add funds and try
-            again.
-          </>
-        }
+        description="You do not have enough balance for this transaction. Add funds and try again."
         code="INSUFFICIENT_FUNDS"
         primaryAction={{ label: "Add funds", onClick: () => {} }}
         onDismiss={() => {}}
@@ -74,7 +68,7 @@ export default function ErrorsPage() {
       <ErrorAlert
         icon={<Unplug className={iconClass} />}
         title="Wallet not connected"
-        description="To continue, connect your Solana wallet. Your keys stay on your device, this app has no access to them."
+        description="To continue, connect your Solana wallet."
         code="WALLET_NOT_CONNECTED"
         primaryAction={{ label: "Connect wallet", onClick: () => {} }}
         onDismiss={() => {}}
@@ -131,7 +125,7 @@ export default function ErrorsPage() {
         <InlineWarning
           icon={<AlertTriangle className={iconClass} />}
           title="High slippage"
-          description="At 5%, you accept receiving up to 5% less than the amount shown. We recommend between 0.1% and 1% for most swaps."
+          description="The price can move either way while your swap is processed. If it moves in your favour you receive more, and this setting is what caps the other direction: at 5%, you accept receiving up to 5% less than shown. We recommend between 0.1% and 1% for most swaps."
           link={{ label: "Why does this happen?", onClick: () => {} }}
         />
       </section>

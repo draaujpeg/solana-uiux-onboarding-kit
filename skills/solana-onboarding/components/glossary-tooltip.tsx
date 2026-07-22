@@ -87,10 +87,12 @@ export function GlossaryTooltip({
         aria-controls={popoverId}
         onClick={() => setOpen((previous) => !previous)}
         {...hoverProps}
+        // Both variants inherit their colour, so the trigger looks like the text
+        // it sits in rather than importing a second style into the sentence.
         className={
           trigger === "underline"
             ? "underline decoration-dotted underline-offset-4"
-            : "inline-flex items-center gap-1 text-[var(--so-text-muted)]"
+            : "inline-flex items-center gap-1 text-left"
         }
       >
         {term}

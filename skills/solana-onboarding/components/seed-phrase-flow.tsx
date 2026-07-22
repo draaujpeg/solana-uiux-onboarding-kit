@@ -1,7 +1,8 @@
 "use client";
 
-import { KeyRound, LogIn } from "lucide-react";
+import { KeyRound } from "lucide-react";
 import { useEffect, useState } from "react";
+import { GoogleMark, ProviderSignInButton } from "./brand-marks";
 import { ChoiceCards, type Choice } from "./choice-cards";
 import { ModalShell } from "./modal-shell";
 import { SeedPhraseConfirm } from "./seed-phrase-confirm";
@@ -29,20 +30,18 @@ export type CustodyChoice = "social" | "phrase";
 
 const choices: Choice[] = [
   {
-    id: "social",
-    icon: <LogIn className="size-5" />,
-    title: "Continue with Google",
-    description:
-      "Your Google account protects access. Nothing to write down right now.",
-    tag: { label: "Easiest way to start", tone: "positive" },
-  },
-  {
     id: "phrase",
     icon: <KeyRound className="size-5" />,
     title: "Use a recovery phrase",
+    explain: {
+      title: "Recovery phrase",
+      definition:
+        "A list of ordinary words, generated once, that rebuilds your wallet on any device. It is the wallet, which is why it is written on paper and never typed into anything you did not open yourself.",
+    },
     description:
-      "Words only you know. If you lose them, you lose access, with no exceptions.",
-    tag: { label: "Requires extra care", tone: "warning" },
+      "The strongest option: nobody but you can reach this wallet, not even us. In exchange, keeping the words safe is on you.",
+    tag: { label: "Full control", tone: "positive" },
+    actionLabel: "Set up a recovery phrase",
   },
 ];
 
@@ -140,11 +139,25 @@ export function SeedPhraseFlow({
                 Choose how access to your account is stored. You can change this
                 later in settings.
               </p>
+              {/* The provider's own button, unrestyled. People recognise it
+                  before they read it, and that recognition is the security
+                  signal, so making it match the product costs more than it
+                  gains. */}
+              <ProviderSignInButton
+                mark={<GoogleMark />}
+                label="Continue with Google"
+                onClick={onChooseSocial}
+              />
+
+              <div className="flex items-center gap-3 text-sm text-[var(--so-text-muted)]">
+                <span className="h-px flex-1 bg-[var(--so-border)]" />
+                Or
+                <span className="h-px flex-1 bg-[var(--so-border)]" />
+              </div>
+
               <ChoiceCards
                 choices={choices}
-                onSelect={(id) =>
-                  id === "social" ? onChooseSocial() : setStage("warning")
-                }
+                onSelect={() => setStage("warning")}
               />
             </>
           )}

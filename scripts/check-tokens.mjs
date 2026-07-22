@@ -17,6 +17,11 @@ const COMPONENTS = join(ROOT, "skills", "solana-onboarding", "components");
 const PALETTE =
   "red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose|slate|gray|zinc|neutral|stone";
 
+// tokens.css is where the kit's own literals belong. brand-marks.tsx holds
+// third party logos, whose colours are fixed by their owners' trademark terms
+// and must not be themed to match a product.
+const EXEMPT = new Set(["tokens.css", "brand-marks.tsx"]);
+
 const FORBIDDEN = [
   {
     pattern: /#[0-9a-fA-F]{3,8}\b/,
@@ -43,8 +48,7 @@ async function filesIn(dir) {
   for (const entry of entries) {
     const path = join(dir, entry.name);
     if (entry.isDirectory()) found.push(...(await filesIn(path)));
-    // tokens.css is where literals are supposed to live.
-    else if (/\.(ts|tsx|css)$/.test(entry.name) && entry.name !== "tokens.css")
+    else if (/\.(ts|tsx|css)$/.test(entry.name) && !EXEMPT.has(entry.name))
       found.push(path);
   }
   return found;

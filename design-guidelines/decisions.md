@@ -250,9 +250,14 @@ carried over.
 
 Structure is fixed, wording is not. The post-onboarding welcome is a template: a
 greeting plus three next steps, so nobody is stranded after connecting or
-creating a wallet, with the wording written per product. The skill proposes it
-and the user confirms, edits or picks an alternative. This holds for every
+creating a wallet, with the wording written per product. This holds for every
 component that carries product text.
+
+The three steps in particular are never assumed. What comes next in a wallet is
+not what comes next in an exchange or a lending product, and a plausible
+guess is worse than an obvious blank, because it survives review by looking
+finished. The skill proposes a set, explains why it chose those three, and waits
+for the user to confirm, edit or replace them before writing anything.
 
 An error says what happened, then what to do about it. It carries the action that
 resolves it and nothing more: the timeout alert asks the user to check their
