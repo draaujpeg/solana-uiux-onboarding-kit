@@ -14,7 +14,10 @@ import { StepDots } from "./step-dots";
  * phrase costs, see it, and prove it was written down.
  *
  * The choice screen sits outside the numbered steps, because it is a fork rather
- * than progress: picking the social option ends the flow here.
+ * than progress: picking the social option ends the flow here. It ends because
+ * an embedded wallet provider owns everything after that press, and there is no
+ * phrase to write down. See references/custody-paths.md, which also covers
+ * importing an existing wallet, the third way in.
  *
  * Leaving is where this flow differs from a confirmation. Once the phrase has
  * been shown, closing means the wallet exists and nobody has its backup, so the

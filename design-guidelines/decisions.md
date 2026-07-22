@@ -169,6 +169,21 @@ of known Solana actions and the fallback questions, live in
 [`risk-classification.md`](../skills/solana-onboarding/references/risk-classification.md).
 It is written to be applied, including backwards in audit mode.
 
+## Custody paths
+
+A user arrives with a wallet in one of three ways: creating one with a recovery
+phrase, creating one through a social login, or importing one they already have.
+The kit covers the first and third end to end. On the second, an embedded wallet
+provider owns every step after the fork, so the kit draws nothing until the
+wallet exists, and there is no phrase to educate anybody about.
+
+Offering only creation is a decision, and usually an accidental one, since a
+large share of arrivals already have a wallet.
+
+The detail, including what to ask a developer before proposing screens here,
+lives in
+[`custody-paths.md`](../skills/solana-onboarding/references/custody-paths.md).
+
 ## Accessibility
 
 Every dialog closes, with a visible control and with Escape, and traps focus
