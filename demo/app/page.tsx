@@ -23,7 +23,13 @@ const families = [
       "Custody choice, the stakes, a blurred phrase, and proof it was written down.",
     ready: true,
   },
-  { href: "", title: "Gate anticipation", description: "The four-step KYC flow.", ready: false },
+  {
+    href: "/kyc",
+    title: "Gate anticipation",
+    description:
+      "Identity verification announced before it blocks anything, and a rejection that says what to do next.",
+    ready: true,
+  },
   { href: "", title: "Inline help and glossary", description: "Tooltip with two triggers.", ready: false },
   { href: "", title: "Post-onboarding welcome", description: "Greeting plus three next steps.", ready: false },
 ];
