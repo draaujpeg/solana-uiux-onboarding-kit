@@ -14,8 +14,9 @@ import { GlossaryTooltip } from "./glossary-tooltip";
  * nested interactive elements that make a card-as-button unusable with a
  * keyboard or a screen reader.
  *
- * The tag is the honest part. One option is easier and one is more demanding,
- * and saying so is better than letting the user discover it three screens later.
+ * Say the trade-off in the description rather than in a badge. The custody fork
+ * carried a "full control" tag once, and it read as marketing sitting next to a
+ * sentence that already made the same claim and could qualify it.
  */
 
 export interface Choice {
@@ -25,7 +26,6 @@ export interface Choice {
   description: string;
   /** Defines the term in the title, in place, for whoever has not met it. */
   explain?: { title: string; definition: ReactNode; href?: string };
-  tag?: { label: string; tone: "positive" | "warning" };
   actionLabel: string;
 }
 
@@ -34,11 +34,6 @@ export interface ChoiceCardsProps {
   onSelect: (id: string) => void;
   className?: string;
 }
-
-const tagTone = {
-  positive: "bg-[var(--so-success-surface)] text-[var(--so-success-text)]",
-  warning: "bg-[var(--so-warning-surface)] text-[var(--so-warning-text)]",
-};
 
 export function ChoiceCards({
   choices,
@@ -83,13 +78,6 @@ export function ChoiceCards({
               <span className="text-sm leading-relaxed text-[var(--so-text-muted)]">
                 {choice.description}
               </span>
-              {choice.tag && (
-                <span
-                  className={`self-start rounded-[var(--so-radius-sm)] px-2 py-1 text-xs font-semibold ${tagTone[choice.tag.tone]}`}
-                >
-                  {choice.tag.label}
-                </span>
-              )}
             </div>
           </div>
 
