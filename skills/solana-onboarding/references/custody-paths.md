@@ -70,6 +70,25 @@ Length is checked, spelling is not. Only the wallet can say whether a phrase is
 valid, and a component that guesses will reject correct phrases in wordlists it
 does not know about.
 
+## Identity verification is somebody else's too
+
+Worth stating alongside the custody paths, because it has the same shape.
+Products do not run identity checks themselves: a provider decides
+automatically, escalates doubtful cases to its own reviewers, and returns a
+verdict over a webhook. What comes back varies enormously, from structured
+reason codes to a bare rejection.
+
+So the kit's rejection wording says a cause **may** apply rather than naming the
+one that did. A component that asserts "your selfie did not match" is claiming
+knowledge the product usually does not have, and a confident wrong reason sends
+the user to fix something that was never broken. The list of plausible causes
+still gives direction, which is what the research asked for: "document not
+accepted" with nothing else is what leaves people resubmitting identical files
+until their attempts run out.
+
+Where a product's provider does return reliable specifics, pass them in and say
+"was" instead. That is a better screen. It is not one the kit can assume.
+
 ## What to ask before proposing anything here
 
 - Does the product create wallets, import them, or both? Offering only one is a

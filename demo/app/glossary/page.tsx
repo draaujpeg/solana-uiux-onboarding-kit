@@ -41,7 +41,7 @@ export default function GlossaryPage() {
                 placement="bottom"
                 term="Slippage"
                 title="Slippage, the variation you accept"
-                definition="The largest difference you will accept between the price shown and the final price. Higher is faster, and you may receive less."
+                definition="The largest difference you will accept between the price shown and the final price."
                 learnMore={{ onClick: () => {} }}
               />
             </dt>

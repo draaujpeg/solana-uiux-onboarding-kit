@@ -1,7 +1,7 @@
 "use client";
 
-import { Camera, ImageOff, RotateCcw } from "lucide-react";
-import type { ComponentType } from "react";
+import { RotateCcw } from "lucide-react";
+import { kycRejectionCauses, kycRejectionIntro } from "./kyc-rejection-causes";
 
 /**
  * Rejection, said in a way the user can act on.
@@ -9,66 +9,44 @@ import type { ComponentType } from "react";
  * The research found this exact screen failing hardest: "document not accepted",
  * with no indication of whether the problem was glare, an expiry date or a
  * mismatch, so the user resubmits the same files until the attempts run out.
- * Every item here pairs the defect with the fix, and the remaining attempts are
- * stated rather than discovered.
+ *
+ * The answer is not to assert a reason the product usually does not have. It is
+ * to name the causes that are worth checking, say plainly that any of them might
+ * apply, and state how many tries are left. See kyc-rejection-causes.ts for why
+ * the wording hedges, and why it is shared with the block alert.
  */
-
-export interface KycRejection {
-  icon?: ComponentType<{ className?: string }>;
-  /** What was wrong. */
-  title: string;
-  /** What to do differently. Without this the item is just a complaint. */
-  remedy: string;
-}
-
-const defaultRejections: KycRejection[] = [
-  {
-    icon: ImageOff,
-    title: "Document photo is low quality",
-    remedy:
-      "The image is blurry or cropped. Take the photo on a flat surface, in good light, with no glare.",
-  },
-  {
-    icon: Camera,
-    title: "Selfie does not match the document",
-    remedy:
-      "Make sure your face is visible, with no sunglasses or cap, looking at the camera.",
-  },
-];
 
 export interface KycRejectedProps {
   onContactSupport: () => void;
   onResubmit: () => void;
-  rejections?: KycRejection[];
+  /** Replace only if the provider returns specifics worth trusting. */
+  intro?: string;
+  causes?: string[];
   attemptsRemaining?: number;
 }
 
 export function KycRejected({
   onContactSupport,
   onResubmit,
-  rejections = defaultRejections,
+  intro = kycRejectionIntro,
+  causes = kycRejectionCauses,
   attemptsRemaining = 2,
 }: KycRejectedProps) {
   return (
     <div className="flex flex-col gap-4">
       <h2 className="pr-8 text-xl font-semibold">Verification not approved</h2>
       <p className="text-sm leading-relaxed text-[var(--so-text-muted)]">
-        We found problems with the documents you sent. Here is what needs fixing:
+        {intro}
       </p>
 
-      <ul className="flex flex-col gap-3">
-        {rejections.map((rejection) => (
-          <li
-            key={rejection.title}
-            className="flex gap-3 rounded-[var(--so-radius-sm)] border border-[var(--so-danger-border)] bg-[var(--so-danger-surface)] p-4 text-[var(--so-danger-text)]"
-          >
-            {rejection.icon && (
-              <rejection.icon className="mt-0.5 size-4 shrink-0" />
-            )}
-            <span className="flex flex-col gap-1">
-              <span className="text-sm font-semibold">{rejection.title}</span>
-              <span className="text-sm leading-relaxed">{rejection.remedy}</span>
-            </span>
+      <ul className="flex flex-col gap-2 rounded-[var(--so-radius-sm)] border border-[var(--so-danger-border)] bg-[var(--so-danger-surface)] p-4 text-sm text-[var(--so-danger-text)]">
+        {causes.map((cause) => (
+          <li key={cause} className="flex gap-2">
+            <span
+              className="mt-2 size-1 shrink-0 rounded-full bg-current"
+              aria-hidden
+            />
+            <span className="leading-relaxed">{cause}</span>
           </li>
         ))}
       </ul>

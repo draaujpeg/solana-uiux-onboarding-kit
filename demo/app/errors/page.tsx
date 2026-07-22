@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { ErrorAlert } from "@kit/error-alert";
 import { InlineWarning } from "@kit/inline-warning";
+import { kycRejectionCauses, kycRejectionIntro } from "@kit/kyc-rejection-causes";
 
 // The six block alerts of the actionable-error family, with the icons settled in
 // design-guidelines/decisions.md. The Figma source pasted one chain-link glyph
@@ -77,11 +78,10 @@ export default function ErrorsPage() {
       <ErrorAlert
         icon={<FileX className={iconClass} />}
         title="Verification not completed"
-        description="We found a problem with the documents you submitted. Here is what needs fixing:"
-        reasons={[
-          "Document photo is low quality or cropped.",
-          "Selfie does not match the document photo.",
-        ]}
+        // Same wording as the rejection screen, from one file, so the two can
+        // never tell the user different things.
+        description={kycRejectionIntro}
+        reasons={kycRejectionCauses}
         code="KYC_DOCUMENT_REJECTED"
         secondaryAction={{ label: "Contact support", onClick: () => {} }}
         primaryAction={{ label: "Resubmit documents", onClick: () => {} }}
