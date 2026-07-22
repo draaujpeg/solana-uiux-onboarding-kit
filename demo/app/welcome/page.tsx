@@ -64,7 +64,7 @@ export default function WelcomePage() {
               "If you have not written it down yet, do it now. Without it there is no way back in.",
           },
         ]}
-        secondaryAction={{ label: "View address", onClick: () => setOpen(null) }}
+        secondaryAction={{ label: "Close", onClick: () => setOpen(null) }}
         primaryAction={{ label: "How to add funds", onClick: () => setOpen(null) }}
       />
 
@@ -77,7 +77,9 @@ export default function WelcomePage() {
               Logo
             </div>
           ),
-          name: "Welcome to Poolside",
+          // The product's own name. The greeting around it is the component's,
+          // so this is the only place the substitution happens.
+          name: "[name]",
           category: "Decentralised exchange, Solana",
         }}
         title="Swap without an account"

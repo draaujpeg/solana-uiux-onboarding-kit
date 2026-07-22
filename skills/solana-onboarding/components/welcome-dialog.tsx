@@ -37,7 +37,12 @@ export interface WelcomeDialogProps {
   onClose: () => void;
   /** Full width art at the top. The product's own, not the kit's. */
   banner?: ReactNode;
-  /** Identifies an app the user may be seeing for the first time. */
+  /**
+   * Identifies an app the user may be seeing for the first time. `name` is the
+   * project's name on its own, since the greeting around it is composed here:
+   * one substitution point, so nobody ships a template that still says
+   * "Welcome to [name]".
+   */
   brand?: { logo: ReactNode; name: string; category?: string };
   title: string;
   description: string;
@@ -74,7 +79,7 @@ export function WelcomeDialog({
           <div className="flex items-center gap-4">
             <div className="shrink-0">{brand.logo}</div>
             <div className="flex flex-col">
-              <span className="font-semibold">{brand.name}</span>
+              <span className="font-semibold">Welcome to {brand.name}</span>
               {brand.category && (
                 <span className="text-sm text-[var(--so-text-muted)]">
                   {brand.category}
