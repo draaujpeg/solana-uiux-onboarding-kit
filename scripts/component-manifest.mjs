@@ -86,8 +86,13 @@ const manifest = await build();
 const serialised = JSON.stringify(manifest, null, 2) + "\n";
 
 if (process.argv.includes("--check")) {
+  // Compared with line endings normalised. Git rewrites them on checkout, so a
+  // byte-for-byte comparison reports every Windows working tree as stale while
+  // passing on the Linux runner, which is the worst way round for a check to be
+  // wrong: it cries wolf where the work happens and stays quiet where it lands.
+  const normalise = (text) => text.replace(/\r\n/g, "\n");
   const committed = await readFile(MANIFEST, "utf8").catch(() => "");
-  if (committed !== serialised) {
+  if (normalise(committed) !== normalise(serialised)) {
     console.error(
       "Component manifest is stale. Run `npm run manifest` and commit the result.\n" +
         "It lists what each component needs, and the skill copies from it, so a\n" +
