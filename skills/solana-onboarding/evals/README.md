@@ -8,6 +8,13 @@ pass and it says nothing about whether the skill is any good. These cases say
 what good means, and running them takes an agent with the skill installed and
 somebody reading the answers.
 
+Two files, testing two different things:
+
+- [`trigger.md`](trigger.md) tests whether the skill is **chosen** at all, from
+  its description, when a request arrives. Run it first: a skill that never fires
+  is not worth grading on anything else.
+- [`cases.md`](cases.md) tests what it **does** once chosen.
+
 Run them after changing `SKILL.md`, after changing a reference, and before
 publishing a version. Record what happened.
 
