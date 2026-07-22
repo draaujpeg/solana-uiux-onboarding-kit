@@ -84,6 +84,8 @@ export default function KycPage() {
             new Promise((resolve) => setTimeout(resolve, 1600))
           }
           onContactSupport={() => finish("Handed off to support.")}
+          // Whatever screen the product uses for verification status.
+          onTrackProgress={() => finish("Sent to the verification status page.")}
         />
       )}
     </main>

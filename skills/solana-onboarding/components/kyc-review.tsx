@@ -12,6 +12,11 @@ import { Clock, Loader2 } from "lucide-react";
  *
  * It closes, unlike its counterpart in the Figma source, which had no button, no
  * close control and no way out at all.
+ *
+ * When the product has somewhere to watch the status, send the user there. A
+ * review outlasts the session it started in, and the alternative is a user who
+ * reopens verification to find out whether anything changed, or who submits
+ * again because they have no other way to ask.
  */
 
 export interface KycReviewStep {
@@ -40,12 +45,21 @@ const defaultSteps: KycReviewStep[] = [
 
 export interface KycReviewProps {
   onClose: () => void;
+  /**
+   * Takes the user to wherever the product shows verification status. Omit it
+   * only if there is nowhere to go, which is worth fixing rather than designing
+   * around.
+   */
+  onTrack?: () => void;
+  trackLabel?: string;
   steps?: KycReviewStep[];
   eta?: string;
 }
 
 export function KycReview({
   onClose,
+  onTrack,
+  trackLabel = "Track progress here",
   steps = defaultSteps,
   eta = "Estimated time: up to 24 hours",
 }: KycReviewProps) {
@@ -100,7 +114,7 @@ export function KycReview({
         ))}
       </ol>
 
-      <div className="mt-2 flex justify-end">
+      <div className="mt-2 flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
         <button
           type="button"
           onClick={onClose}
@@ -108,6 +122,15 @@ export function KycReview({
         >
           Close
         </button>
+        {onTrack && (
+          <button
+            type="button"
+            onClick={onTrack}
+            className="rounded-[var(--so-radius-sm)] bg-[var(--so-primary)] px-4 py-2 text-sm font-semibold text-[var(--so-primary-fg)]"
+          >
+            {trackLabel}
+          </button>
+        )}
       </div>
     </div>
   );

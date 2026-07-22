@@ -34,6 +34,12 @@ export interface KycFlowProps {
   /** Send the document. Resolve to move to the review stage. */
   onSubmit: (file: File, documentType: string) => Promise<void> | void;
   onContactSupport: () => void;
+  /**
+   * Where the product shows verification status. A review outlasts the session
+   * it started in, so without somewhere to watch it the user reopens this flow
+   * to check, or submits again to provoke an answer.
+   */
+  onTrackProgress?: () => void;
 }
 
 export function KycFlow({
@@ -43,6 +49,7 @@ export function KycFlow({
   onDefer,
   onSubmit,
   onContactSupport,
+  onTrackProgress,
 }: KycFlowProps) {
   const [stage, setStage] = useState<KycStage>(initialStage);
   const [busy, setBusy] = useState(false);
@@ -134,7 +141,9 @@ export function KycFlow({
             />
           )}
 
-          {stage === "review" && <KycReview onClose={onClose} />}
+          {stage === "review" && (
+            <KycReview onClose={onClose} onTrack={onTrackProgress} />
+          )}
 
           {stage === "rejected" && (
             <KycRejected
