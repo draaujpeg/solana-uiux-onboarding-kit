@@ -69,18 +69,36 @@ components. The headline ones:
    component that carries product text.
 8. Components ship in English. The Figma copy is Portuguese and is translated, not kept.
 
-## Still open
+## What the specs flagged, and where it landed
 
-Collected across all six specs, to be resolved before the components are written:
+Collected across all six specs. The components are now written, so this records
+what happened to each rather than what is left to do.
 
-- The updated slippage export still shows the chain-link icon and a red dismiss X on an amber alert.
-- The timeout alert tells the user to check their history but offers no action that opens it.
-- The secondary button is a ghost on some frames and a filled grey on others.
-- Confirmation titles alternate between questions and statements.
-- No modal has a close control or an Esc path, and KYC step 3 has no exit at all.
-- Missing states across the whole set: upload with a file selected, upload error, hover, focus,
-  loading, and any narrow or mobile breakpoint.
-- Modal widths come in four sizes (400, 440, 600, 640) and need one scale.
-- Word 9 of the sample phrase reads `silve`, which is not a BIP-39 word.
-- The tooltip component default says "Entender mais" while every instance renders "Entenda mais".
-- Em dashes appear throughout the Portuguese copy, against the repository's own convention.
+Resolved in the components:
+
+- Every dialog closes, with a control and with Escape. The KYC review screen,
+  which had no exit at all, gained one.
+- Modal widths went from four sizes to two.
+- The secondary action is outlined everywhere, rather than a ghost on some
+  screens and a filled grey on others.
+- Titles ask a question when a decision is being requested, and state a fact
+  when the screen informs.
+- The sample phrase uses real BIP-39 words.
+- Upload with a file selected, upload refused, loading, and narrow screens all
+  exist.
+- The tooltip wording and the em dashes went with the translation to English.
+
+Decided rather than fixed:
+
+- The timeout alert names checking the history without offering a control for
+  it. Reaching the history is the product's navigation, not the alert's.
+
+Out of scope for now:
+
+- Hover styling, and a focus ring of the kit's own. Components rely on the
+  browser's.
+
+Still true of the Figma source, corrected in code rather than in the file:
+
+- The slippage export shows a chain-link icon and a red dismiss control on an
+  amber alert. The component uses `trending-down`, and the alert is red.
