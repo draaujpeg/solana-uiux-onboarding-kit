@@ -12,17 +12,19 @@ looking it up means admitting they do not. So they guess, or they leave.
 
 What the thirteen showed:
 
-- **Jupiter** exposes swap, perps, DCA, slippage, priority fee, MEV protection
-  and route with no glossary or inline explanation, and a sidebar of eleven or
-  twelve advanced products with no taglines and no distinction of complexity.
-- **OKX** offers an unexplained choice between Lite Mode and Advanced Mode, and
-  ambiguous tax wording such as "source of income" in its verification.
-- **Meteora** failed the entire match-with-the-real-world heuristic: language,
-  terms and logic do not make sense to an ordinary user.
-- **Kamino** does the same with lending vocabulary, where collateral, LTV and
-  liquidation carry direct financial consequences.
-- Even **Tangem**, the best in the sample, keeps ecosystem particulars unclear
-  for someone arriving from outside.
+- A leading aggregator exposes swap, perps, DCA, slippage, priority fee, MEV
+  protection and route with no glossary or inline explanation, alongside a
+  sidebar of eleven or twelve advanced products with no taglines and no
+  distinction of complexity.
+- A large exchange offers an unexplained choice between a simplified and an
+  advanced mode, plus ambiguous tax wording such as "source of income" in its
+  verification.
+- A liquidity DEX failed the entire match-with-the-real-world heuristic:
+  language, terms and logic do not make sense to an ordinary user.
+- A lending product does the same with its own vocabulary, where collateral, LTV
+  and liquidation carry direct financial consequences.
+- Even the highest-scoring product in the sample leaves ecosystem particulars
+  unclear for someone arriving from outside.
 
 ## When it applies
 
@@ -52,8 +54,8 @@ less" is guidance, and it belongs in the warning that fires when the setting is
 risky, which is pattern 05.
 
 **Progressive disclosure.** Hide advanced products and options behind a mode
-rather than explaining twelve things at once. The study named this specifically
-for Jupiter and Meteora.
+rather than explaining twelve things at once. The study recommended this
+specifically for the two densest interfaces it scored.
 
 **Link onward.** Every term has a longer version on the help page, reached
 through `help-links.ts`.

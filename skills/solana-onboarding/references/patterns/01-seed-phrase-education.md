@@ -11,17 +11,18 @@ understand.
 
 What the thirteen showed:
 
-- **Phantom** carries its single severity 4 here. At the moment the phrase is
-  displayed, a user with a question is completely alone: no tooltip, no help
-  icon, no chat. The documentation exists, outside the flow, and does not help
-  at the deciding instant.
-- **Trust Wallet** has two severity 4 items, both here. Losing the phrase means
-  permanent, irreversible loss of funds, with no assisted recovery and no
-  recognition mechanism to replace it.
-- **Solflare** does not show the phrase at account creation at all, breaking the
-  convention the user expects and leaving them unclear on how they would ever
-  recover access.
-- **Ledger** demands 24 words with the heaviest memorisation load in the sample.
+- One of the most technically polished wallets in the sample carries its **only**
+  severity 4 here. At the moment the phrase is displayed, a user with a question
+  is completely alone: no tooltip, no help icon, no chat. Documentation exists,
+  outside the flow, and does not help at the deciding instant.
+- Another widely used wallet has **two** severity 4 items, both here. Losing the
+  phrase means permanent, irreversible loss of funds, with no assisted recovery
+  and no recognition mechanism to replace it.
+- A third wallet does not show the phrase at account creation **at all**,
+  breaking the convention the user expects and leaving them unclear on how they
+  would ever recover access.
+- A hardware wallet demands 24 words, the heaviest memorisation load in the
+  sample, with nothing to ease it.
 
 ## When it applies
 
@@ -38,8 +39,8 @@ check. `seed-phrase-import` for a wallet the user already has.
 
 ## Rules
 
-**Show the phrase.** Solflare's omission is worse than a clumsy reveal. A user
-who never saw it does not know they need it.
+**Show the phrase.** Omitting it is worse than revealing it clumsily. A user who
+never saw it does not know they need it.
 
 **Explain before revealing, not after.** The screen before the phrase is where
 the analogy goes, while the user can still act on it. Afterwards it is

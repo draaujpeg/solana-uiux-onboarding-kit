@@ -12,16 +12,16 @@ several other gaps into severity 4 items rather than severity 2 ones.
 
 What the thirteen showed:
 
-- **Phantom**'s only severity 4: at the seed phrase reveal, the moment of maximum
-  consequence, there is no tooltip, no help icon, no chat. Documentation exists,
-  outside the flow, and does not resolve the decisive instant.
-- **Trust Wallet** has no assistance at exactly the highest-risk steps, storing
+- A leading wallet's only severity 4 sits here: at the recovery phrase reveal,
+  the moment of maximum consequence, there is no tooltip, no help icon, no chat.
+  Documentation exists, outside the flow, and does not resolve the decisive
+  instant.
+- Another wallet offers no assistance at exactly its highest-risk steps, storing
   the phrase and configuring security.
-- **Solflare** has 24/7 chat and structured docs, with no direct contextual link
-  at the moment of an error or a security warning.
-- **Jupiter** offers no in-context support call to action at the moment a swap
-  fails.
-- **DEX Screener** has no help, guidance or support of any kind.
+- A third has 24/7 chat and well-structured documentation, and no direct
+  contextual link to either at the moment of an error or a security warning.
+- A leading aggregator offers no in-context support at the moment a swap fails.
+- A data explorer has no help, guidance or support of any kind.
 
 ## When it applies
 

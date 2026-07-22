@@ -4,10 +4,13 @@ The protocol the research used to score 13 Solana products, so an audit run by
 this skill produces something comparable to those results rather than a fresh
 opinion.
 
-Nielsen's ten heuristics, each broken into three concrete questions. Thirty items
-per product. The questions are the researchers' own, translated from the
-evaluation spreadsheet; the notes under each heuristic are what the study found
-when it asked them, and the pattern named is what closes the gap.
+Ten established usability heuristics, each broken into three concrete questions.
+Thirty items per product. The questions are the researchers' own; the notes under
+each heuristic are what the study found when it asked them, and the pattern named
+is what closes the gap.
+
+The evaluated products are not named here, or anywhere in this skill. The
+findings are what transfer; which company was measured is theirs.
 
 Score the **onboarding flow**, from the first screen to the first moment of real
 use, not the whole product. Say so when something falls outside that line.

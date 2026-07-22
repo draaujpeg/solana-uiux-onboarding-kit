@@ -9,17 +9,18 @@ the largest family in the kit for that reason.
 
 What the thirteen showed:
 
-- **OKX** rejects verification documents with "document not accepted", without
-  saying whether the problem was glare, an expiry date or a mismatch. Users
-  resubmit the same files indefinitely, with automated support that does not
-  resolve it. Worse for Brazilian users, whose documents create friction in a
+- A large exchange rejects verification documents with "document not accepted",
+  without saying whether the problem was glare, an expiry date or a mismatch.
+  Users resubmit the same files indefinitely, with automated support that does
+  not resolve it. Worse for Brazilian users, whose documents create friction in a
   system calibrated elsewhere.
-- **Jupiter** returns technical, non-actionable messages, "some routes failed to
-  load", "swap failed", with no in-context support at the moment of failure.
-- **Exodus**, one of the best in the sample, disables its continue button on a
-  weak password without saying why or how to fix it. The user recovers only
+- A leading aggregator returns technical, non-actionable messages, "some routes
+  failed to load" and "swap failed", with no in-context support at the moment of
+  failure.
+- A wallet ranked among the three best in the sample disables its continue button
+  on a weak password without saying why or how to fix it. The user recovers only
   "after thinking about it for a while".
-- **Trust Wallet** and **Ledger** both signal failures without guiding the
+- A wallet and a hardware wallet both signal failures without guiding the
   correction, which the study scored as distrust rather than friction.
 
 ## When it applies
