@@ -48,8 +48,14 @@ jobs:
         with:
           node-version: 20
           cache: npm
+      # npm install, not npm ci. The lockfile is generated on whichever machine
+      # last touched it, and npm records only that platform's native binaries
+      # for packages that ship one per architecture, so a lockfile written on
+      # Windows leaves a Linux runner without lightningcss. Installing resolves
+      # them for the platform in hand. The lockfile is still committed and still
+      # pins versions; what it cannot pin is which binary this machine needs.
       - name: Install
-        run: npm ci
+        run: npm install --no-audit --no-fund
       - name: Check that components paint only with tokens
         run: npm run lint:tokens
       - name: Lint

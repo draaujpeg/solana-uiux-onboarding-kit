@@ -14,13 +14,13 @@ This work was supported by **SuperteamBR** (Solana).
 |---|---|---|
 | 📖 Research synthesis (book) | [`docs/`](docs/) | The full heuristic analysis in chapters, published via [GitBook](https://matheus-draau.gitbook.io/solana-onboarding-kit) |
 | 📐 Design Guidelines | [`design-guidelines/`](design-guidelines/) | The flow and components that fill the friction map, plus how to use them (🚧 under construction) |
-| 🤖 Claude skill | [`skill/`](skill/) | The whole kit distilled into an easy-to-apply Claude Code skill (🚧 under construction) |
+| 🤖 Claude skill | [`skills/solana-onboarding/`](skills/solana-onboarding/) | The whole kit distilled into an easy-to-apply Claude Code skill (🚧 under construction) |
 
 ## Quick start
 
 1. **Read the research.** Start with the [synthesis](docs/) — 7 short chapters that go from the diagnosis to the proposed patterns (also publishable as a GitBook site).
 2. **Explore the design guidelines** (🚧 under construction). [`design-guidelines/`](design-guidelines/) will turn each gap into a buildable flow and components.
-3. **Use the Claude skill** (🚧 under construction). [`skill/`](skill/) will let you apply the kit while designing or reviewing onboarding, right inside Claude Code.
+3. **Use the Claude skill** (🚧 under construction). [`skills/solana-onboarding/`](skills/solana-onboarding/) will let you apply the kit while designing or reviewing onboarding, right inside Claude Code.
 
 New here? [`getting-started.md`](getting-started.md) is the shortest path in.
 

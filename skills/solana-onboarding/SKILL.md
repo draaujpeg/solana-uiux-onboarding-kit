@@ -7,6 +7,6 @@ description: Applies the Solana UIUX Onboarding Kit's research and guidelines to
 
 > 🚧 **Under construction.**
 
-This skill will distil the whole kit, the [research](../../../docs/) and the design guidelines, into a single easy-to-apply capability for designing and reviewing Solana onboarding inside Claude Code.
+This skill will distil the whole kit, the [research](../../docs/) and the design guidelines, into a single easy-to-apply capability for designing and reviewing Solana onboarding inside Claude Code.
 
-It builds on the research and design phases and is not ready yet. See [CONTRIBUTING](../../../CONTRIBUTING.md) to follow along or help.
+It builds on the research and design phases and is not ready yet. See [CONTRIBUTING](../../CONTRIBUTING.md) to follow along or help.
