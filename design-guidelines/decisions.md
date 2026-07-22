@@ -24,6 +24,21 @@ Modal widths are two, not four: `--so-width-compact` (440px) for confirmations
 and the seed phrase flow, `--so-width-wide` (640px) for KYC and the
 post-onboarding welcome.
 
+**Open question: dark mode.** Installing the kit into a clean Next project
+surfaced this. The default template ships a `prefers-color-scheme: dark` block
+that swaps `--background` and `--foreground`, and the kit's surface and text
+tokens follow it correctly, because they read those names. The alert tints do
+not: `--so-danger-surface` and the warning and success tones are literal light
+values, since no host defines them and the Figma source has no dark mode.
+
+So in a dark host, an alert renders as a light island. It stays readable, dark
+red text on pale pink, and it looks like a component from somebody else's
+product, which is the one thing the token layer exists to prevent.
+
+Fixing it means choosing dark tints, which is a design decision the source
+cannot answer. The mechanism is cheap, a `prefers-color-scheme` block in
+tokens.css or `light-dark()` per tint. The values are the work.
+
 ## Severity
 
 Severity is `neutral`, `warning` or `danger`, and it controls colour only, never
