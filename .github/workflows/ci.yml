@@ -61,7 +61,9 @@ jobs:
       - name: Check the component manifest matches the components
         run: npm run manifest:check
       - name: Check the skill is installable and consistent
-        run: npm test
+        run: npm run test:skill
+      - name: Test what the components actually do
+        run: npm run test:components
       - name: Lint
         run: npm run lint
       - name: Build and type-check

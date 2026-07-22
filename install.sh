@@ -103,8 +103,17 @@ install_to() {
     fi
 
     if [ "$LINK" = true ]; then
-        ln -s "$SOURCE_DIR" "$dest"
-        echo "Linked:    $dest -> $SOURCE_DIR"
+        # Windows without developer mode, and some filesystems, silently give
+        # you a copy. Saying "linked" then would be a lie the user only finds
+        # out about when a git pull fails to update the skill.
+        ln -s "$SOURCE_DIR" "$dest" 2>/dev/null || cp -r "$SOURCE_DIR" "$dest"
+        if [ -L "$dest" ]; then
+            echo "Linked:    $dest -> $SOURCE_DIR"
+        else
+            echo "Copied:    $dest"
+            echo "           (this system would not create a symlink, so a git"
+            echo "            pull will not update it. Re-run to refresh.)"
+        fi
     else
         cp -r "$SOURCE_DIR" "$dest"
         echo "Installed: $dest"

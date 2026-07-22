@@ -1,0 +1,45 @@
+#!/bin/sh
+#
+# Runs the cheap checks before a commit is written, rather than after it is
+# pushed. Everything here is deterministic and finishes in seconds; the build
+# and the link check stay in CI, where they can afford to be slow.
+#
+# Install it with:
+#
+#   npm run hooks
+#
+# Skip it, when you know why, with:
+#
+#   git commit --no-verify
+
+set -e
+
+echo "Checking before commit..."
+
+if git diff --cached --name-only | grep -q '\.md$'; then
+    npx --yes markdownlint-cli2 >/dev/null || {
+        echo
+        echo "Markdown style failed. Run: npx markdownlint-cli2"
+        exit 1
+    }
+fi
+
+npm run --silent lint:tokens >/dev/null || {
+    echo
+    echo "A component is painting with a literal value. Run: npm run lint:tokens"
+    exit 1
+}
+
+npm run --silent manifest:check >/dev/null || {
+    echo
+    echo "The component manifest is stale. Run: npm run manifest"
+    exit 1
+}
+
+npm run --silent test:skill >/dev/null || {
+    echo
+    echo "The skill checks failed. Run: npm run test:skill"
+    exit 1
+}
+
+echo "Looks good."
