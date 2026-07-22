@@ -58,6 +58,8 @@ jobs:
         run: npm ci --no-audit --no-fund
       - name: Check that components paint only with tokens
         run: npm run lint:tokens
+      - name: Check the component manifest matches the components
+        run: npm run manifest:check
       - name: Lint
         run: npm run lint
       - name: Build and type-check
