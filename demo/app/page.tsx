@@ -30,8 +30,20 @@ const families = [
       "Identity verification announced before it blocks anything, and a rejection that says what to do next.",
     ready: true,
   },
-  { href: "", title: "Inline help and glossary", description: "Tooltip with two triggers.", ready: false },
-  { href: "", title: "Post-onboarding welcome", description: "Greeting plus three next steps.", ready: false },
+  {
+    href: "/glossary",
+    title: "Inline help and glossary",
+    description:
+      "A definition where the word is, from an underlined term or an icon in a row of values.",
+    ready: true,
+  },
+  {
+    href: "/welcome",
+    title: "Post-onboarding welcome",
+    description:
+      "A greeting and three next steps, so setup does not end by dropping the user into an empty screen.",
+    ready: true,
+  },
 ];
 
 export default function Home() {
