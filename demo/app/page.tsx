@@ -16,7 +16,13 @@ const families = [
       "Four templates chosen by how much an irreversible action costs, plus the destination address field.",
     ready: true,
   },
-  { href: "", title: "Seed phrase education", description: "The four-step custody flow.", ready: false },
+  {
+    href: "/seed-phrase",
+    title: "Seed phrase education",
+    description:
+      "Custody choice, the stakes, a blurred phrase, and proof it was written down.",
+    ready: true,
+  },
   { href: "", title: "Gate anticipation", description: "The four-step KYC flow.", ready: false },
   { href: "", title: "Inline help and glossary", description: "Tooltip with two triggers.", ready: false },
   { href: "", title: "Post-onboarding welcome", description: "Greeting plus three next steps.", ready: false },
