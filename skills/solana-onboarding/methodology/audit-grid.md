@@ -4,8 +4,9 @@ The protocol the research used to score 13 Solana products, so an audit run by
 this skill produces something comparable to those results rather than a fresh
 opinion.
 
-Ten established usability heuristics, each broken into three concrete questions.
-Thirty items per product. The questions are the researchers' own; the notes under
+[Nielsen's ten usability heuristics](https://www.nngroup.com/books/usability-engineering/),
+each broken into three concrete questions. Thirty items per product. The
+heuristics are Nielsen's, the questions are the researchers' own, the notes under
 each heuristic are what the study found when it asked them, and the pattern named
 is what closes the gap.
 
