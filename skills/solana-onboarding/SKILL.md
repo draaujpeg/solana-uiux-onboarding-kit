@@ -1,6 +1,11 @@
 ---
 name: solana-onboarding
 description: Diagnoses and fixes the entry experience of Solana products, wallets, DEXs, aggregators and lending apps, using components calibrated on a heuristic study of 13 apps. Use when the user is designing, reviewing or implementing onboarding, wallet creation or import, transaction confirmations, error states, identity verification, or when they paste an error code or ask why users abandon a flow.
+license: MIT
+compatibility: React 18+, Tailwind CSS, and lucide-react for the copy-in components. The skill itself has no runtime requirement.
+metadata:
+  author: draaujpeg
+  version: "1.0.0"
 ---
 
 # Solana onboarding

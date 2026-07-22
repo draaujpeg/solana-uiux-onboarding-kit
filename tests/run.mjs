@@ -183,6 +183,27 @@ check("links into our own repository point at paths that exist", () => {
   assert(broken.length === 0, broken.join("\n"));
 });
 
+check("the skill version matches the top of the changelog", () => {
+  // Two places carry the version, the frontmatter and the changelog, and they
+  // drift the moment one is bumped without the other. Whoever installed an
+  // earlier copy reads the changelog to know what a new version means, so a
+  // version with no matching entry is worse than none.
+  const skillSource = readFileSync(skillFile, "utf8");
+  const skillVersion = skillSource.match(/version:\s*"([^"]+)"/)?.[1];
+  assert(skillVersion, "no version in SKILL.md metadata");
+
+  const changelog = readFileSync(join(ROOT, "CHANGELOG.md"), "utf8");
+  const topVersion = changelog.match(/^##\s*\[([^\]]+)\]/m)?.[1];
+  assert(topVersion, "no version heading in CHANGELOG.md");
+
+  assert(
+    skillVersion === topVersion,
+    `SKILL.md says ${skillVersion}, the changelog's newest entry is ${topVersion}.\n` +
+      "Bump one to match the other.",
+  );
+  return skillVersion;
+});
+
 console.log("\nDisclosure\n");
 
 check("no evaluated product is named anywhere in the skill", () => {

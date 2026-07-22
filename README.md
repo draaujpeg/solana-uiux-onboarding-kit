@@ -1,8 +1,12 @@
-# Solana UIUX Onboarding Kit
+<p align="center">
+  <img src="assets/banner.svg" alt="Solana UI/UX Onboarding Kit. Install with npx skills add draaujpeg/solana-uiux-onboarding-kit." width="100%" />
+</p>
 
-> A research-backed kit to fix Solana onboarding — easy to apply.
+<h1 align="center">Solana UI/UX Onboarding Kit</h1>
 
-The Solana ecosystem was built by and for people who already understand seed phrases, self-custody, and the irreversibility of transactions. For everyone arriving from Web2, onboarding is where adoption breaks — and, in a context of irreversible money, where users either protect themselves or lose funds. This kit turns a heuristic study into reusable solutions: the **research** that proves the problem is systemic, the **design guidelines and components** that solve it, and a **Claude skill** that applies them — so any product can fix its entry flow instead of repeating the same mistakes.
+<p align="center">A research-backed kit that fixes where Solana onboarding loses users, ready to install into your agent.</p>
+
+The Solana ecosystem was built by and for people who already understand seed phrases, self-custody, and the irreversibility of transactions. For everyone arriving from Web2, onboarding is where adoption breaks, and, in a context of irreversible money, where users either protect themselves or lose funds. This kit turns a heuristic study into reusable solutions: the **research** that proves the problem is systemic, the **design guidelines and components** that solve it, and an **agent skill** that applies them, so any product can fix its entry flow instead of repeating the same mistakes.
 
 This work was supported by **SuperteamBR** (Solana).
 
@@ -16,19 +20,40 @@ This work was supported by **SuperteamBR** (Solana).
 | 📐 Design Guidelines | [`design-guidelines/`](design-guidelines/) | The components that fill the friction map, the specs behind them, and the rules they are built to |
 | 🤖 Agent skill | [`skills/solana-onboarding/`](skills/solana-onboarding/) | The whole kit as a skill that diagnoses an onboarding flow and builds the screens that fix it |
 
-## Quick start
+## Install
+
+From the skills registry, one command:
 
 ```bash
 npx skills add draaujpeg/solana-uiux-onboarding-kit
 ```
 
-Then say what you have. "Review the onboarding in this repo" runs an audit
-against the same thirty questions the research used. "Our swap shows this error
-and users vanish" finds the pattern and builds the screen. Components are copied
-into your project, so you own and edit them, with nothing to keep updated.
+Or clone and run the installer, which takes `--project` to install into one
+project and `--link` to keep it updated with a git pull:
 
-Works with any agent that reads Agent Skills: Claude Code, Codex, Copilot, Gemini
-CLI, Cursor, Windsurf, Cline, OpenCode.
+```bash
+git clone https://github.com/draaujpeg/solana-uiux-onboarding-kit
+cd solana-uiux-onboarding-kit
+./install.sh            # for the current user
+./install.sh --project  # into this project only
+./install.sh --link     # symlink instead of copy
+```
+
+Or copy `skills/solana-onboarding/` into your agent's skills directory by hand.
+Any agent that reads Agent Skills works; the two directories below cover all of
+them:
+
+| Agent | Personal | Project |
+|---|---|---|
+| Claude Code, Cline | `~/.claude/skills/` | `.claude/skills/` |
+| Codex, Copilot, Gemini CLI, Cursor, Windsurf, OpenCode | `~/.agents/skills/` | `.agents/skills/` |
+
+## Use it
+
+Say what you have. "Review the onboarding in this repo" runs an audit against the
+same thirty questions the research used. "Our swap shows this error and users
+vanish" finds the pattern and builds the screen. Components are copied into your
+project, so you own and edit them, with nothing to keep updated.
 
 New here? [`getting-started.md`](getting-started.md) is the shortest path in.
 
