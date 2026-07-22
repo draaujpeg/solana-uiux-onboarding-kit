@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { ErrorAlert } from "@kit/error-alert";
 import { InlineWarning } from "@kit/inline-warning";
+import { helpUrl } from "@kit/help-links";
 import { kycRejectionCauses, kycRejectionIntro } from "@kit/kyc-rejection-causes";
 
 // The six block alerts of the actionable-error family, with the icons settled in
@@ -126,7 +127,7 @@ export default function ErrorsPage() {
           icon={<AlertTriangle className={iconClass} />}
           title="High slippage"
           description="The price can move either way while your swap is processed. If it moves in your favour you receive more, and this setting is what caps the other direction: at 5%, you accept receiving up to 5% less than shown. We recommend between 0.1% and 1% for most swaps."
-          link={{ label: "Why does this happen?", onClick: () => {} }}
+          link={{ label: "Why does this happen?", href: helpUrl("whyHighSlippageWarning") }}
         />
       </section>
 
@@ -146,7 +147,7 @@ export default function ErrorsPage() {
           icon={<DollarSign className={iconClass} />}
           title="Not enough SOL for the fee"
           description="You have 0 SOL. You need at least 0.000005 SOL to pay the network fee, even though the transfer is in USDC."
-          link={{ label: "How do I get SOL?", onClick: () => {} }}
+          link={{ label: "How do I get SOL?", href: helpUrl("howToGetSol") }}
         />
       </section>
     </main>

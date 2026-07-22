@@ -4,6 +4,7 @@ import { KeyRound } from "lucide-react";
 import { useEffect, useState } from "react";
 import { GoogleMark, ProviderSignInButton } from "./brand-marks";
 import { ChoiceCards, type Choice } from "./choice-cards";
+import { helpUrl } from "./help-links";
 import { ModalShell } from "./modal-shell";
 import { SeedPhraseConfirm } from "./seed-phrase-confirm";
 import { SeedPhraseReveal } from "./seed-phrase-reveal";
@@ -37,6 +38,7 @@ const choices: Choice[] = [
       title: "Recovery phrase",
       definition:
         "A list of ordinary words, generated once, that rebuilds your wallet on any device. It is the wallet, which is why it is written on paper and never typed into anything you did not open yourself.",
+      href: helpUrl("recoveryPhrase"),
     },
     description:
       "Maximum security. The wallet answers only to your words, so no one can open it, freeze it or hand it to anyone else, us included. Keep them safe and it is yours alone.",

@@ -9,3 +9,4 @@
 * [6. What stood out the most](key-observations.md)
 * [7. From diagnosis to design system](conclusion.md)
 * [8. Applying the kit](applying-the-kit.md)
+* [Help and glossary](help.md)

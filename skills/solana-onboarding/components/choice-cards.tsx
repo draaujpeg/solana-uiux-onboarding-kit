@@ -24,7 +24,7 @@ export interface Choice {
   title: string;
   description: string;
   /** Defines the term in the title, in place, for whoever has not met it. */
-  explain?: { title: string; definition: ReactNode };
+  explain?: { title: string; definition: ReactNode; href?: string };
   tag?: { label: string; tone: "positive" | "warning" };
   actionLabel: string;
 }
@@ -70,6 +70,11 @@ export function ChoiceCards({
                     term={choice.title}
                     title={choice.explain.title}
                     definition={choice.explain.definition}
+                    learnMore={
+                      choice.explain.href
+                        ? { href: choice.explain.href }
+                        : undefined
+                    }
                   />
                 ) : (
                   choice.title

@@ -1,6 +1,7 @@
 "use client";
 
 import { GlossaryTooltip } from "@kit/glossary-tooltip";
+import { helpUrl } from "@kit/help-links";
 
 // The three terms the research found most often used without explanation, in the
 // two places jargon actually appears: inside a sentence, and as the label of a
@@ -24,7 +25,7 @@ export default function GlossaryPage() {
             term="network fee"
             title="Network fee, also called gas"
             definition="A small amount paid to the validators that process your transaction. On Solana it is usually a fraction of a cent."
-            learnMore={{ onClick: () => {} }}
+            learnMore={{ href: helpUrl("networkFee") }}
           />{" "}
           of <strong>0.000005 SOL</strong>. The final amount may vary slightly
           depending on the network.
@@ -42,7 +43,7 @@ export default function GlossaryPage() {
                 term="Slippage"
                 title="Slippage, the variation you accept"
                 definition="The largest difference you will accept between the price shown and the final price."
-                learnMore={{ onClick: () => {} }}
+                learnMore={{ href: helpUrl("slippage") }}
               />
             </dt>
             <dd className="font-semibold">0.5%</dd>
@@ -55,7 +56,7 @@ export default function GlossaryPage() {
                 term="Price impact"
                 title="Price impact"
                 definition="How much your swap moves the token's own price. Large trades in small pools move it more."
-                learnMore={{ onClick: () => {} }}
+                learnMore={{ href: helpUrl("priceImpact") }}
               />
             </dt>
             <dd className="font-semibold">Under 0.01%</dd>

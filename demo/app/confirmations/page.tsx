@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ArrowLeftRight, Send, ShieldOff, Trash2 } from "lucide-react";
 import { AddressField } from "@kit/address-field";
 import { ConfirmationDialog } from "@kit/confirmation-dialog";
+import { helpUrl } from "@kit/help-links";
 
 // One button per template, so each can be opened and read on its own. The last
 // two are both critical: one is the plain type-to-confirm, the other combines a
@@ -82,7 +83,10 @@ export default function ConfirmationsPage() {
           placeholder="Paste the address here, for example 7xKp...3mNz"
           warningHeading="Check the address carefully"
           warningBody="Transactions on Solana are irreversible. One wrong character sends to a different address, with no way to undo."
-          link={{ label: "How do I copy the correct address?", onClick: () => {} }}
+          link={{
+            label: "How do I copy the correct address?",
+            href: helpUrl("howToCopyAnAddress"),
+          }}
         />
       </section>
 
