@@ -3,6 +3,13 @@ import Link from "next/link";
 // Index of the showroom. One entry per pattern family, added as each is built.
 const families = [
   {
+    href: "/board",
+    title: "Every screen, on one page",
+    description:
+      "The whole kit as a board, in rows by family, with a theme switch and a zoom. Start here for a visual review.",
+    ready: true,
+  },
+  {
     href: "/errors",
     title: "Actionable errors",
     description:
