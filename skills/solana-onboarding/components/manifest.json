@@ -1,0 +1,392 @@
+{
+  "stylesheet": "tokens.css",
+  "components": {
+    "address-field": {
+      "file": "address-field.tsx",
+      "client": true,
+      "requires": [
+        "callout"
+      ],
+      "packages": [],
+      "installs": [
+        "address-field.tsx",
+        "callout.tsx",
+        "severity.ts"
+      ],
+      "installPackages": [
+        "lucide-react"
+      ]
+    },
+    "brand-marks": {
+      "file": "brand-marks.tsx",
+      "client": false,
+      "requires": [],
+      "packages": [],
+      "installs": [
+        "brand-marks.tsx"
+      ],
+      "installPackages": []
+    },
+    "callout": {
+      "file": "callout.tsx",
+      "client": true,
+      "requires": [
+        "severity"
+      ],
+      "packages": [
+        "lucide-react"
+      ],
+      "installs": [
+        "callout.tsx",
+        "severity.ts"
+      ],
+      "installPackages": [
+        "lucide-react"
+      ]
+    },
+    "choice-cards": {
+      "file": "choice-cards.tsx",
+      "client": true,
+      "requires": [
+        "glossary-tooltip"
+      ],
+      "packages": [],
+      "installs": [
+        "choice-cards.tsx",
+        "glossary-tooltip.tsx"
+      ],
+      "installPackages": [
+        "lucide-react"
+      ]
+    },
+    "confirmation-dialog": {
+      "file": "confirmation-dialog.tsx",
+      "client": true,
+      "requires": [
+        "callout",
+        "modal-shell",
+        "severity",
+        "summary-table"
+      ],
+      "packages": [
+        "lucide-react"
+      ],
+      "installs": [
+        "callout.tsx",
+        "confirmation-dialog.tsx",
+        "modal-shell.tsx",
+        "severity.ts",
+        "summary-table.tsx"
+      ],
+      "installPackages": [
+        "lucide-react"
+      ]
+    },
+    "error-alert": {
+      "file": "error-alert.tsx",
+      "client": true,
+      "requires": [
+        "severity"
+      ],
+      "packages": [
+        "lucide-react"
+      ],
+      "installs": [
+        "error-alert.tsx",
+        "severity.ts"
+      ],
+      "installPackages": [
+        "lucide-react"
+      ]
+    },
+    "glossary-tooltip": {
+      "file": "glossary-tooltip.tsx",
+      "client": true,
+      "requires": [],
+      "packages": [
+        "lucide-react"
+      ],
+      "installs": [
+        "glossary-tooltip.tsx"
+      ],
+      "installPackages": [
+        "lucide-react"
+      ]
+    },
+    "help-links": {
+      "file": "help-links.ts",
+      "client": false,
+      "requires": [],
+      "packages": [],
+      "installs": [
+        "help-links.ts"
+      ],
+      "installPackages": []
+    },
+    "inline-warning": {
+      "file": "inline-warning.tsx",
+      "client": true,
+      "requires": [
+        "severity"
+      ],
+      "packages": [],
+      "installs": [
+        "inline-warning.tsx",
+        "severity.ts"
+      ],
+      "installPackages": []
+    },
+    "kyc-flow": {
+      "file": "kyc-flow.tsx",
+      "client": true,
+      "requires": [
+        "kyc-rejected",
+        "kyc-requirements",
+        "kyc-review",
+        "kyc-upload",
+        "modal-shell",
+        "step-dots"
+      ],
+      "packages": [],
+      "installs": [
+        "kyc-flow.tsx",
+        "kyc-rejected.tsx",
+        "kyc-rejection-causes.ts",
+        "kyc-requirements.tsx",
+        "kyc-review.tsx",
+        "kyc-upload.tsx",
+        "modal-shell.tsx",
+        "step-dots.tsx"
+      ],
+      "installPackages": [
+        "lucide-react"
+      ]
+    },
+    "kyc-rejected": {
+      "file": "kyc-rejected.tsx",
+      "client": true,
+      "requires": [
+        "kyc-rejection-causes"
+      ],
+      "packages": [
+        "lucide-react"
+      ],
+      "installs": [
+        "kyc-rejected.tsx",
+        "kyc-rejection-causes.ts"
+      ],
+      "installPackages": [
+        "lucide-react"
+      ]
+    },
+    "kyc-rejection-causes": {
+      "file": "kyc-rejection-causes.ts",
+      "client": false,
+      "requires": [],
+      "packages": [],
+      "installs": [
+        "kyc-rejection-causes.ts"
+      ],
+      "installPackages": []
+    },
+    "kyc-requirements": {
+      "file": "kyc-requirements.tsx",
+      "client": true,
+      "requires": [],
+      "packages": [
+        "lucide-react"
+      ],
+      "installs": [
+        "kyc-requirements.tsx"
+      ],
+      "installPackages": [
+        "lucide-react"
+      ]
+    },
+    "kyc-review": {
+      "file": "kyc-review.tsx",
+      "client": true,
+      "requires": [],
+      "packages": [
+        "lucide-react"
+      ],
+      "installs": [
+        "kyc-review.tsx"
+      ],
+      "installPackages": [
+        "lucide-react"
+      ]
+    },
+    "kyc-upload": {
+      "file": "kyc-upload.tsx",
+      "client": true,
+      "requires": [],
+      "packages": [
+        "lucide-react"
+      ],
+      "installs": [
+        "kyc-upload.tsx"
+      ],
+      "installPackages": [
+        "lucide-react"
+      ]
+    },
+    "modal-shell": {
+      "file": "modal-shell.tsx",
+      "client": true,
+      "requires": [],
+      "packages": [
+        "lucide-react"
+      ],
+      "installs": [
+        "modal-shell.tsx"
+      ],
+      "installPackages": [
+        "lucide-react"
+      ]
+    },
+    "seed-phrase-confirm": {
+      "file": "seed-phrase-confirm.tsx",
+      "client": true,
+      "requires": [],
+      "packages": [],
+      "installs": [
+        "seed-phrase-confirm.tsx"
+      ],
+      "installPackages": []
+    },
+    "seed-phrase-flow": {
+      "file": "seed-phrase-flow.tsx",
+      "client": true,
+      "requires": [
+        "brand-marks",
+        "choice-cards",
+        "help-links",
+        "modal-shell",
+        "seed-phrase-confirm",
+        "seed-phrase-reveal",
+        "seed-phrase-warning",
+        "step-dots"
+      ],
+      "packages": [
+        "lucide-react"
+      ],
+      "installs": [
+        "brand-marks.tsx",
+        "callout.tsx",
+        "choice-cards.tsx",
+        "glossary-tooltip.tsx",
+        "help-links.ts",
+        "modal-shell.tsx",
+        "seed-phrase-confirm.tsx",
+        "seed-phrase-flow.tsx",
+        "seed-phrase-reveal.tsx",
+        "seed-phrase-warning.tsx",
+        "severity.ts",
+        "step-dots.tsx"
+      ],
+      "installPackages": [
+        "lucide-react"
+      ]
+    },
+    "seed-phrase-import": {
+      "file": "seed-phrase-import.tsx",
+      "client": true,
+      "requires": [
+        "callout",
+        "modal-shell"
+      ],
+      "packages": [],
+      "installs": [
+        "callout.tsx",
+        "modal-shell.tsx",
+        "seed-phrase-import.tsx",
+        "severity.ts"
+      ],
+      "installPackages": [
+        "lucide-react"
+      ]
+    },
+    "seed-phrase-reveal": {
+      "file": "seed-phrase-reveal.tsx",
+      "client": true,
+      "requires": [
+        "callout"
+      ],
+      "packages": [
+        "lucide-react"
+      ],
+      "installs": [
+        "callout.tsx",
+        "seed-phrase-reveal.tsx",
+        "severity.ts"
+      ],
+      "installPackages": [
+        "lucide-react"
+      ]
+    },
+    "seed-phrase-warning": {
+      "file": "seed-phrase-warning.tsx",
+      "client": true,
+      "requires": [
+        "callout"
+      ],
+      "packages": [
+        "lucide-react"
+      ],
+      "installs": [
+        "callout.tsx",
+        "seed-phrase-warning.tsx",
+        "severity.ts"
+      ],
+      "installPackages": [
+        "lucide-react"
+      ]
+    },
+    "severity": {
+      "file": "severity.ts",
+      "client": false,
+      "requires": [],
+      "packages": [],
+      "installs": [
+        "severity.ts"
+      ],
+      "installPackages": []
+    },
+    "step-dots": {
+      "file": "step-dots.tsx",
+      "client": false,
+      "requires": [],
+      "packages": [],
+      "installs": [
+        "step-dots.tsx"
+      ],
+      "installPackages": []
+    },
+    "summary-table": {
+      "file": "summary-table.tsx",
+      "client": false,
+      "requires": [],
+      "packages": [],
+      "installs": [
+        "summary-table.tsx"
+      ],
+      "installPackages": []
+    },
+    "welcome-dialog": {
+      "file": "welcome-dialog.tsx",
+      "client": true,
+      "requires": [
+        "modal-shell"
+      ],
+      "packages": [],
+      "installs": [
+        "modal-shell.tsx",
+        "welcome-dialog.tsx"
+      ],
+      "installPackages": [
+        "lucide-react"
+      ]
+    }
+  }
+}
