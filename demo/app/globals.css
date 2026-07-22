@@ -16,6 +16,22 @@
   enough to retheme every alert.
 */
 
+/*
+  Dark mode is declared the way a host declares it, by naming its own background
+  and foreground. The kit is not told about the theme and does not look at the
+  operating system: it mixes its surfaces and tints against whatever these two
+  say, so it follows this product rather than the machine it is viewed on.
+
+  To see it, switch your system appearance, or emulate prefers-color-scheme in
+  the browser's rendering tools.
+*/
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #101012;
+    --foreground: #ededed;
+  }
+}
+
 body {
   background: var(--so-surface-muted);
   color: var(--so-text);

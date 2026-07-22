@@ -5,19 +5,27 @@
   with a literal colour. That is what lets a component look native inside any
   product it is copied into.
 
-  How adaptation works:
+  The file is in two halves.
 
-  - Where a host project already has an equivalent token, the variable reads it
-    first and falls back to the kit's own value. The fallback names follow the
-    shadcn/ui convention (`--background`, `--foreground`, `--border`, `--primary`,
-    `--destructive`, `--radius`), which is the most common setup in the React and
-    Solana ecosystem. A project using those names is themed automatically, with
-    no edits.
-  - Where a host project usually has nothing (alert tints, warning and success
-    tones), the kit ships its own value, calibrated on the Figma source. Override
-    any single one by redeclaring it after this file is imported.
+  The first declares the values the Figma source was drawn with, each reading a
+  host token before its own. Those names follow the shadcn/ui convention
+  (`--background`, `--foreground`, `--border`, `--primary`, `--destructive`,
+  `--radius`), the most common setup in the React and Solana ecosystem, so a
+  project using them is themed with no edits.
 
-  Import this once, before the components, then override as needed:
+  The second derives the tones that a host almost never defines, the alert tints
+  above all, by mixing the accent against the surface and text actually in use.
+  That is what carries the kit into a dark product, and what makes a single
+  brand colour arrive whole rather than needing four overrides.
+
+  The split is a fallback, not decoration: without it the bundler synthesises its
+  own, which resolves an alert tint to solid red and its text to the same red.
+
+  Note that the kit never reads the operating system's colour scheme. It reads
+  the product's. A product with no dark mode, opened on a machine that prefers
+  dark, would otherwise get dark alerts on its white screen.
+
+  Import once, before the components, then override whatever you like:
 
       @import "./tokens.css";
 
@@ -27,22 +35,20 @@
 */
 
 :root {
-  /* Surfaces */
+  /* Surface and text are the two the rest of the file hangs off. */
   --so-surface: var(--card, var(--background, #ffffff));
-  --so-surface-muted: var(--muted, #f5f5f5);
-  --so-scrim: rgb(20 20 20 / 0.8);
-
-  /* Text */
   --so-text: var(--foreground, #1e1e1e);
+  --so-surface-muted: var(--muted, #f5f5f5);
   --so-text-muted: var(--muted-foreground, #757575);
   --so-text-subtle: #b3b3b3;
 
-  /* Borders and radii */
+  /* A scrim darkens whatever is behind it, in either theme. */
+  --so-scrim: rgb(20 20 20 / 0.8);
+
   --so-border: var(--border, #d9d9d9);
   --so-radius-sm: var(--radius, 8px);
   --so-radius-lg: 16px;
 
-  /* Primary action */
   --so-primary: var(--primary, #2c2c2c);
   --so-primary-fg: var(--primary-foreground, #f5f5f5);
 
@@ -61,11 +67,10 @@
   --so-warning-text: #682d03;
 
   /* Success. Used by the seed phrase confirmation and the KYC timeline. */
-  --so-success: #02542d;
+  --so-success: #14875f;
   --so-success-surface: #aff4c6;
   --so-success-text: #02542d;
 
-  /* Disabled */
   --so-disabled-surface: #d9d9d9;
   --so-disabled-text: #b3b3b3;
 
@@ -81,4 +86,42 @@
   /* Block alerts are not dialogs and keep their own measure, wide enough for
      three lines of explanation without becoming a page-width banner. */
   --so-width-alert: 480px;
+}
+
+@supports (color: color-mix(in oklab, red, red)) {
+  :root {
+    /*
+      Neutrals mixed between the surface and the text in use, so a host that
+      declares a dark background carries the kit into dark with it.
+    */
+    --so-surface-muted: var(--muted, color-mix(in oklab, var(--so-text) 4%, var(--so-surface)));
+    --so-text-muted: var(--muted-foreground, color-mix(in oklab, var(--so-text) 60%, var(--so-surface)));
+    --so-text-subtle: color-mix(in oklab, var(--so-text) 35%, var(--so-surface));
+    --so-border: var(--border, color-mix(in oklab, var(--so-text) 15%, var(--so-surface)));
+    --so-disabled-surface: color-mix(in oklab, var(--so-text) 15%, var(--so-surface));
+    --so-disabled-text: color-mix(in oklab, var(--so-text) 40%, var(--so-surface));
+
+    /*
+      The primary action inverts the surface: the dark button the source drew on
+      a light page, and a light one on a dark page.
+    */
+    --so-primary: var(--primary, var(--so-text));
+    --so-primary-fg: var(--primary-foreground, var(--so-surface));
+
+    /*
+      Alert tints. The tint mixes towards the surface and the tone towards the
+      text, so both follow the product's theme and both follow a brand colour
+      set on the accent above.
+    */
+    --so-danger-surface: color-mix(in oklab, var(--so-danger) 12%, var(--so-surface));
+    --so-danger-border: color-mix(in oklab, var(--so-danger) 55%, var(--so-surface));
+    --so-danger-text: color-mix(in oklab, var(--so-danger) 60%, var(--so-text));
+
+    --so-warning-surface: color-mix(in oklab, var(--so-warning) 14%, var(--so-surface));
+    --so-warning-border: color-mix(in oklab, var(--so-warning) 55%, var(--so-surface));
+    --so-warning-text: color-mix(in oklab, var(--so-warning) 60%, var(--so-text));
+
+    --so-success-surface: color-mix(in oklab, var(--so-success) 16%, var(--so-surface));
+    --so-success-text: color-mix(in oklab, var(--so-success) 65%, var(--so-text));
+  }
 }

@@ -24,20 +24,24 @@ Modal widths are two, not four: `--so-width-compact` (440px) for confirmations
 and the seed phrase flow, `--so-width-wide` (640px) for KYC and the
 post-onboarding welcome.
 
-**Open question: dark mode.** Installing the kit into a clean Next project
-surfaced this. The default template ships a `prefers-color-scheme: dark` block
-that swaps `--background` and `--foreground`, and the kit's surface and text
-tokens follow it correctly, because they read those names. The alert tints do
-not: `--so-danger-surface` and the warning and success tones are literal light
-values, since no host defines them and the Figma source has no dark mode.
+**Dark mode follows the product, not the machine.** The kit never reads
+`prefers-color-scheme`. It reads the surface and text the host declares, and
+mixes everything else against them, so a dark product gets dark alert tints and
+a light-only product stays light even on a machine that prefers dark.
 
-So in a dark host, an alert renders as a light island. It stays readable, dark
-red text on pale pink, and it looks like a component from somebody else's
-product, which is the one thing the token layer exists to prevent.
+That distinction is the whole design. Keying off the operating system would
+mean a product with no dark mode showing dark alerts on its white screen, which
+is a worse failure than having no dark mode at all.
 
-Fixing it means choosing dark tints, which is a design decision the source
-cannot answer. The mechanism is cheap, a `prefers-color-scheme` block in
-tokens.css or `light-dark()` per tint. The values are the work.
+Two consequences worth knowing. A brand colour now arrives whole: setting
+`--so-danger` moves its tint, its border and its text together, where before it
+took four overrides. And a host that declares no background at all still gets
+the values the Figma source was drawn with, since those are the base layer.
+
+The derived half sits behind `@supports (color: color-mix(...))`, with the
+literal values outside it. Not decoration: without that split the bundler
+synthesises its own fallback, which resolves an alert tint to solid red and its
+text to the same red.
 
 ## Severity
 
