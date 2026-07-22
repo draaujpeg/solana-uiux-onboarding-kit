@@ -35,6 +35,8 @@ npm run dev             # see the components running
 npm run build           # compile and type-check, the checkpoint
 npm run lint
 npm run lint:tokens     # fails on any literal colour inside a component
+npm run manifest        # regenerate after changing a component's imports
+npm test                # the skill is installable, consistent and anonymous
 ```
 
 ## Always

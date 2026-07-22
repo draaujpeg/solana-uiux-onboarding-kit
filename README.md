@@ -13,22 +13,30 @@ This work was supported by **SuperteamBR** (Solana).
 | Pillar | Folder | Description |
 |---|---|---|
 | 📖 Research synthesis (book) | [`docs/`](docs/) | The full heuristic analysis in chapters, published via [GitBook](https://matheus-draau.gitbook.io/solana-onboarding-kit) |
-| 📐 Design Guidelines | [`design-guidelines/`](design-guidelines/) | The flow and components that fill the friction map, plus how to use them (🚧 under construction) |
-| 🤖 Claude skill | [`skills/solana-onboarding/`](skills/solana-onboarding/) | The whole kit distilled into an easy-to-apply Claude Code skill (🚧 under construction) |
+| 📐 Design Guidelines | [`design-guidelines/`](design-guidelines/) | The components that fill the friction map, the specs behind them, and the rules they are built to |
+| 🤖 Agent skill | [`skills/solana-onboarding/`](skills/solana-onboarding/) | The whole kit as a skill that diagnoses an onboarding flow and builds the screens that fix it |
 
 ## Quick start
 
-1. **Read the research.** Start with the [synthesis](docs/) — 7 short chapters that go from the diagnosis to the proposed patterns (also publishable as a GitBook site).
-2. **Explore the design guidelines** (🚧 under construction). [`design-guidelines/`](design-guidelines/) will turn each gap into a buildable flow and components.
-3. **Use the Claude skill** (🚧 under construction). [`skills/solana-onboarding/`](skills/solana-onboarding/) will let you apply the kit while designing or reviewing onboarding, right inside Claude Code.
+```bash
+npx skills add draaujpeg/solana-uiux-onboarding-kit
+```
+
+Then say what you have. "Review the onboarding in this repo" runs an audit
+against the same thirty questions the research used. "Our swap shows this error
+and users vanish" finds the pattern and builds the screen. Components are copied
+into your project, so you own and edit them, with nothing to keep updated.
+
+Works with any agent that reads Agent Skills: Claude Code, Codex, Copilot, Gemini
+CLI, Cursor, Windsurf, Cline, OpenCode.
 
 New here? [`getting-started.md`](getting-started.md) is the shortest path in.
 
 ## Status
 
 - ✅ **Research & synthesis**: complete ([`docs/`](docs/))
-- 🚧 **Design guidelines & components**: under construction
-- 🚧 **Claude skill**: under construction
+- ✅ **Design guidelines & components**: 21 components across the seven patterns
+- ✅ **Agent skill**: routes, audits, and installs into your project
 
 ## License
 

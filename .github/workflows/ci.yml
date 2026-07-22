@@ -60,6 +60,8 @@ jobs:
         run: npm run lint:tokens
       - name: Check the component manifest matches the components
         run: npm run manifest:check
+      - name: Check the skill is installable and consistent
+        run: npm test
       - name: Lint
         run: npm run lint
       - name: Build and type-check
