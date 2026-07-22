@@ -158,6 +158,31 @@ check("help topics resolve to headings on the help page", () => {
   return `${topics.length} topics`;
 });
 
+check("links into our own repository point at paths that exist", () => {
+  // Pages published to GitBook link with absolute URLs, because a relative repo
+  // path does not resolve on the web. Those are invisible to a relative-link
+  // check and, worse, keep working until the change they describe lands: a link
+  // to a folder we are about to rename passes every review and breaks on merge.
+  const broken = [];
+  const docs = filesUnder(join(ROOT, "docs"), ".md").concat(
+    ["README.md", "getting-started.md", "CONTRIBUTING.md"]
+      .map((name) => join(ROOT, name))
+      .filter(existsSync),
+  );
+
+  for (const file of docs) {
+    const source = readFileSync(file, "utf8");
+    const pattern =
+      /https:\/\/github\.com\/draaujpeg\/solana-uiux-onboarding-kit\/(?:tree|blob)\/main\/([^)\s#]+)/g;
+    for (const [, path] of source.matchAll(pattern)) {
+      if (!existsSync(join(ROOT, decodeURIComponent(path)))) {
+        broken.push(`${relative(ROOT, file)} -> ${path}`);
+      }
+    }
+  }
+  assert(broken.length === 0, broken.join("\n"));
+});
+
 console.log("\nDisclosure\n");
 
 check("no evaluated product is named anywhere in the skill", () => {
