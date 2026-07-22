@@ -9,7 +9,13 @@ const families = [
       "Block alerts for the six failures that stop a transaction, each with the action that resolves it.",
     ready: true,
   },
-  { href: "", title: "Pre-action confirmation", description: "The four risk templates.", ready: false },
+  {
+    href: "/confirmations",
+    title: "Pre-action confirmation",
+    description:
+      "Four templates chosen by how much an irreversible action costs, plus the destination address field.",
+    ready: true,
+  },
   { href: "", title: "Seed phrase education", description: "The four-step custody flow.", ready: false },
   { href: "", title: "Gate anticipation", description: "The four-step KYC flow.", ready: false },
   { href: "", title: "Inline help and glossary", description: "Tooltip with two triggers.", ready: false },
