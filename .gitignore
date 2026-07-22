@@ -38,3 +38,7 @@ sintese-onboarding-design-system.md
 # public, and the skill is deliberately anonymous.
 heuristic_avaliation.xlsx
 *.xlsx
+
+# Local install of our own skill, for dogfooding. install.sh --project writes
+# these; the source of truth is skills/.
+.agents/

@@ -1,7 +1,7 @@
 "use client";
 
 import { FileCheck, Upload } from "lucide-react";
-import { useId, useRef, useState } from "react";
+import { useId, useState } from "react";
 
 /**
  * Choosing a document type and attaching the file.
@@ -50,7 +50,6 @@ export function KycUpload({
   const [documentType, setDocumentType] = useState(types[0].value);
   const [file, setFile] = useState<File | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const inputRef = useRef<HTMLInputElement>(null);
   const groupName = useId();
 
   const choose = (chosen: File | null) => {
@@ -110,23 +109,26 @@ export function KycUpload({
         </div>
       </fieldset>
 
-      <input
-        ref={inputRef}
-        type="file"
-        accept={accept.join(",")}
-        onChange={(event) => choose(event.target.files?.[0] ?? null)}
-        className="sr-only"
-      />
-
-      <button
-        type="button"
-        onClick={() => inputRef.current?.click()}
-        className={`flex flex-col items-center gap-2 rounded-[var(--so-radius-sm)] border p-8 text-center ${
+      {/*
+        A label wrapping the input, rather than a hidden input driven by a
+        separate button. That arrangement leaves a keyboard with two stops, one
+        of them a file field with no accessible name. Here there is one control,
+        it is named by the text inside it, and focus-within puts the ring where
+        the user can see it.
+      */}
+      <label
+        className={`flex cursor-pointer flex-col items-center gap-2 rounded-[var(--so-radius-sm)] border p-8 text-center focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 ${
           error
             ? "border-[var(--so-danger-border)]"
             : "border-[var(--so-border)]"
         }`}
       >
+        <input
+          type="file"
+          accept={accept.join(",")}
+          onChange={(event) => choose(event.target.files?.[0] ?? null)}
+          className="sr-only"
+        />
         {file ? (
           <>
             <FileCheck
@@ -147,7 +149,7 @@ export function KycUpload({
             </span>
           </>
         )}
-      </button>
+      </label>
 
       {error && (
         <p role="alert" className="text-sm text-[var(--so-danger-text)]">
