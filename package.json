@@ -7,6 +7,9 @@
     "demo",
     "skills/solana-onboarding"
   ],
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "scripts": {
     "dev": "npm run dev --workspace demo",
     "build": "npm run build --workspace demo",
