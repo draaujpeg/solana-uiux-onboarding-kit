@@ -10,6 +10,44 @@ the project uses [semantic versioning](https://semver.org/): the first number
 changes when a component's props change in a way that breaks an existing install,
 the second when something is added, the third for fixes.
 
+## [1.2.0] — 2026-08-06
+
+The revision [chapter 9](docs/field-audit.md) left open. The audited product's
+screen before the recovery phrase was better than the kit's in three specific
+ways, and this closes all three.
+
+### Changed
+
+- **`seed-phrase-warning` states its analogy** instead of gesturing at one. The
+  screen now names the bank login the user already protects, then names the one
+  way this differs: no password to change, no one to call. An instruction to keep
+  something safe is advice; a comparison to a thing they already guard is a model
+  they can use.
+- **It names the theft.** A block that says nobody will ever ask for these words,
+  not support, not an administrator, not anyone claiming to work at the product.
+  General warnings about sharing are forgotten by the time they matter. The
+  script a thief will use is what the user recognises months later.
+- **The reveal control waits five seconds and says why.** A checkbox can be
+  ticked in half a second by someone who read nothing, so it proves intent and
+  not attention. Configurable through `revealDelaySeconds`, and it announces the
+  reason once per state rather than once per second, so the countdown does not
+  talk over the screen it is timing.
+- **The screen keeps one status line, and it says when the button opens.** The
+  line is mounted from the start and never removed, because a live region that
+  arrives holding its own message is silent and one taken away carries the
+  announcement off with it. The opening is the state that has to be spoken: the
+  button changing colour is visible only. Keeping the line also stops the
+  buttons jumping up as the user reaches for them.
+
+This is the kit's only timed gate, and
+[`decisions.md`](design-guidelines/decisions.md) now records that it stays that
+way: applied to a second screen it stops being a signal and becomes a tax.
+
+### Compatibility
+
+No breaking change. `SeedPhraseWarning` gained one optional prop, and a copied
+component keeps working untouched. Reinstall to pick up the revised screen.
+
 ## [1.1.0] — 2026-08-06
 
 ### Added

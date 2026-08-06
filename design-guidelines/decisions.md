@@ -217,6 +217,11 @@ Progress dots are decorative and are not focusable. In the source they are built
 out of icon buttons, which would put empty stops in the keyboard path.
 
 Block alerts announce as `role="alert"`, inline warnings as `aria-live="polite"`.
+A live region is mounted before it has anything to say and stays mounted after
+it stops: a screen reader speaks only when text changes inside a region it was
+already watching, so a region rendered together with its own message is silent,
+and one removed along with it takes the announcement with it. Render the region
+from the start and change the text inside it.
 The icon-triggered tooltip opens on hover and on keyboard focus, and its trigger
 carries an accessible name; the underlined-word trigger opens on click and is a
 real button. Success and error in the seed phrase confirmation are never colour
@@ -257,6 +262,24 @@ before it, which correctly gates on its checkbox.
 The recovery phrase renders blurred and reveals on a deliberate action. There is
 never a copy-to-clipboard control: anything running on the machine can read the
 clipboard, so its absence is a rule, not an omission.
+
+The screen before that reveal is the one place in the kit where a control is
+deliberately held shut on a timer, five seconds by default, alongside the
+checkbox rather than instead of it. The two gate different things: the checkbox
+is a claim about the room the user is in, the delay is the only way to keep the
+screen in front of someone who would otherwise press through it. It obeys the
+rule above and shows its countdown, and the countdown is not announced once per
+second, since a live region that recounts talks over the screen it is timing.
+
+The line carrying that reason is the screen's status line, and it says why the
+button is shut and then says that it has opened. The opening is the state that
+has to be spoken: the button changing colour is visible only, and a user who
+cannot see it would otherwise have to go back and press it to find out.
+
+This is the kit's only timed gate, and it stays that way. Applied to a second
+screen it stops being a signal that something here is different and becomes a
+tax. The field audit is the evidence for both halves: a shipping product used it
+exactly once, on this screen.
 
 The upload field has three states, empty, file selected and rejected, and states
 its accepted formats and size limit before the user picks a file rather than
