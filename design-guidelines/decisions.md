@@ -258,6 +258,19 @@ The recovery phrase renders blurred and reveals on a deliberate action. There is
 never a copy-to-clipboard control: anything running on the machine can read the
 clipboard, so its absence is a rule, not an omission.
 
+The screen before that reveal is the one place in the kit where a control is
+deliberately held shut on a timer, five seconds by default, alongside the
+checkbox rather than instead of it. The two gate different things: the checkbox
+is a claim about the room the user is in, the delay is the only way to keep the
+screen in front of someone who would otherwise press through it. It obeys the
+rule above and shows its countdown, and the countdown is not announced once per
+second, since a live region that recounts talks over the screen it is timing.
+
+This is the kit's only timed gate, and it stays that way. Applied to a second
+screen it stops being a signal that something here is different and becomes a
+tax. The field audit is the evidence for both halves: a shipping product used it
+exactly once, on this screen.
+
 The upload field has three states, empty, file selected and rejected, and states
 its accepted formats and size limit before the user picks a file rather than
 after.

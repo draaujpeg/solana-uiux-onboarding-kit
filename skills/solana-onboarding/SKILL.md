@@ -5,7 +5,7 @@ license: MIT
 compatibility: React 18+, Tailwind CSS, and lucide-react for the copy-in components. The skill itself has no runtime requirement.
 metadata:
   author: draaujpeg
-  version: "1.1.0"
+  version: "1.2.0"
 ---
 
 # Solana onboarding

@@ -24,6 +24,12 @@ What the thirteen showed:
 - A hardware wallet demands 24 words, the heaviest memorisation load in the
   sample, with nothing to ease it.
 
+What the field audit added, from a product that does this better than the study's
+thirteen and, on this screen, better than the kit's first version: the analogy
+can be stated outright rather than gestured at, the theft attempt can be named
+before it happens, and the control that reveals the phrase can be made to wait.
+The rules below now carry all three.
+
 ## When it applies
 
 Whenever a product creates a self-custodial wallet, and whenever it imports one.
@@ -45,6 +51,31 @@ never saw it does not know they need it.
 **Explain before revealing, not after.** The screen before the phrase is where
 the analogy goes, while the user can still act on it. Afterwards it is
 decoration.
+
+**State the analogy, do not gesture at it.** Name something the user already
+owns, a bank login is the one that lands, and then name the single way this
+differs from it: no password to change, no one to call. An instruction to keep
+something safe is advice. A comparison to a thing they already protect is a
+model they can reason with, and it is the difference between a screen that warns
+and a screen that teaches.
+
+**Name the theft, not the category.** "Never share your phrase" is forgotten by
+the time it matters. What survives is being told in advance the exact shape the
+attempt will take: someone claiming to be support, an administrator, or staff,
+in a hurry, on whichever app they find the user. Inoculation works on specifics.
+Say the product's own name in that sentence, because that is the name the thief
+will use.
+
+**The reveal control waits, and says why it is waiting.** A checkbox can be
+ticked in half a second by someone who read nothing, so it proves intent but not
+attention. A few seconds before the control opens keeps the screen in front of
+the user long enough to be read, and stops the reflex press. It has to announce
+itself: a disabled control that explains nothing reads as a broken product, and
+the kit's own rule is that no action is ever disabled without saying why.
+
+Do not stack this with more ceremony elsewhere. The wait is affordable here
+precisely because it happens once, on a screen the user reaches only when a
+phrase is about to be created.
 
 **The phrase arrives hidden and reveals on a deliberate press.** Asking someone
 to check that nobody is watching and then showing the words the instant they
@@ -70,6 +101,11 @@ the guarantee first and the responsibility second.
 
 The three rules before the reveal are concrete actions, not warnings: nobody
 looking at the screen, no photographs, written on paper in order.
+
+The impersonation line is the one piece of copy on this screen to insist on
+keeping. Products soften it, because naming your own support team as the thing
+to distrust reads as an admission. It is the opposite: it is the sentence that
+still works months later, in a conversation the product will never see.
 
 Adapt all of it to the product. The structure is fixed, the wording is theirs.
 
