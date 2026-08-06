@@ -48,6 +48,9 @@ export interface SeedPhraseWarningProps {
    * read the screen, short enough not to read as a broken button. Pass 0 to
    * remove the wait, which is the wrong trade on a phrase the user cannot
    * replace.
+   *
+   * Read once, when the screen mounts. Changing it mid-countdown could only
+   * restart the wait or cut it short, and both are worse than ignoring it.
    */
   revealDelaySeconds?: number;
 }
@@ -70,12 +73,20 @@ export function SeedPhraseWarning({
   const waiting = secondsLeft > 0;
   const blocked = waiting || !acknowledged;
 
+  // One status line, mounted from the start and never removed. A live region
+  // that appears or disappears along with its message announces nothing: the
+  // screen reader only speaks when text changes inside a region it was already
+  // watching, so a region that arrives holding its own message is silent, and
+  // so is one that is taken away. The state worth announcing here is the last
+  // one, since the button opening is otherwise visible only. Keeping the line
+  // also stops the buttons jumping up as the user reaches for them.
+  //
   // Announced once per state rather than once per second: a live region that
   // recounts the seconds talks over everything else on the screen.
-  const blockedReason = waiting
+  const status = waiting
     ? "Take a moment to read this screen before continuing."
     : acknowledged
-      ? ""
+      ? "You can show your phrase now."
       : "Tick the box above when you are ready.";
 
   return (
@@ -126,14 +137,12 @@ export function SeedPhraseWarning({
         </label>
       </div>
 
-      {blocked && (
-        <p className="text-xs leading-relaxed text-[var(--so-text-muted)]">
-          <span aria-live="polite">{blockedReason}</span>
-          {waiting && (
-            <span aria-hidden> The button opens in {secondsLeft}s.</span>
-          )}
-        </p>
-      )}
+      <p className="text-xs leading-relaxed text-[var(--so-text-muted)]">
+        <span aria-live="polite">{status}</span>
+        {waiting && (
+          <span aria-hidden> The button opens in {secondsLeft}s.</span>
+        )}
+      </p>
 
       <div className="mt-2 flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
         <button

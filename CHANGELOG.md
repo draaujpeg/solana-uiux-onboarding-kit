@@ -32,6 +32,12 @@ ways, and this closes all three.
   not attention. Configurable through `revealDelaySeconds`, and it announces the
   reason once per state rather than once per second, so the countdown does not
   talk over the screen it is timing.
+- **The screen keeps one status line, and it says when the button opens.** The
+  line is mounted from the start and never removed, because a live region that
+  arrives holding its own message is silent and one taken away carries the
+  announcement off with it. The opening is the state that has to be spoken: the
+  button changing colour is visible only. Keeping the line also stops the
+  buttons jumping up as the user reaches for them.
 
 This is the kit's only timed gate, and
 [`decisions.md`](design-guidelines/decisions.md) now records that it stays that

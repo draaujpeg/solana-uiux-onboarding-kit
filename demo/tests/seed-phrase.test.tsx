@@ -81,6 +81,27 @@ describe("the screen before the phrase", () => {
     expect(screen.getByText(/tick the box/i)).toBeInTheDocument();
   });
 
+  it("says the button has opened, since nothing else says it out loud", async () => {
+    vi.useFakeTimers();
+    render(
+      <SeedPhraseWarning
+        onBack={() => {}}
+        onReveal={() => {}}
+        revealDelaySeconds={2}
+      />,
+    );
+
+    fireEvent.click(screen.getByRole("checkbox"));
+    await wait(2);
+
+    // The button lighting up is visible only. Without this line the status
+    // region is taken away at the moment it finally has something to say, and
+    // someone on a screen reader is left going back to poll the button.
+    expect(
+      screen.getByText(/you can show your phrase now/i),
+    ).toBeInTheDocument();
+  });
+
   it("names the theft rather than warning in general", () => {
     render(<SeedPhraseWarning onBack={() => {}} onReveal={() => {}} />);
 
