@@ -62,6 +62,9 @@ New here? [`getting-started.md`](getting-started.md) is the shortest path in.
 - ✅ **Research & synthesis**: complete ([`docs/`](docs/))
 - ✅ **Design guidelines & components**: 21 components across the seven patterns
 - ✅ **Agent skill**: routes, audits, and installs into your project
+- ✅ **Tested in the field**: the grid run against a product outside the study
+  ([chapter 9](docs/field-audit.md)), which found twelve items at severity 3 or
+  above and sent three corrections back into the kit
 
 ## License
 

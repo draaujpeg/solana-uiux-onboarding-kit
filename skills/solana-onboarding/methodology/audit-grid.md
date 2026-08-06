@@ -104,13 +104,21 @@ Closes it: **gate anticipation**.
 ## 5. Error prevention
 
 - **13.** Does the system prevent errors before they happen?
-- **14.** Are there validations before critical actions?
+- **14.** Are there validations before critical actions, and does each one prove
+  what it claims to?
 - **15.** Is the user warned before irreversible actions?
 
 Question 15 is the heart of the whole kit. Most products treat an irreversible
 transfer with the same ceremony as a reversible setting. Ask it of every action
 that moves value or touches a key, and score each one separately in your notes
 even though the grid has a single cell.
+
+Question 14 asks what a validation proves, not whether one is present, because a
+check that can be satisfied without doing the thing it checks is worse than no
+check: it issues a pass the user believes. A field audit found a recovery phrase
+confirmation that accepted a paste, so the screen certified that the phrase was
+on the clipboard rather than that the user had written it down. Read the input
+path of every validation before scoring it met.
 
 Closes it: **pre-action confirmation**, chosen by
 `references/risk-classification.md`, plus the destination address warning.
