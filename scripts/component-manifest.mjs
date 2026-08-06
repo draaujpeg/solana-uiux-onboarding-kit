@@ -14,11 +14,13 @@
 
 import { readdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
+import { fileURLToPath } from "node:url";
 
-const ROOT = new URL("..", import.meta.url).pathname.replace(
-  /^\/([A-Za-z]:)/,
-  "$1",
-);
+// fileURLToPath rather than .pathname: a URL escapes the characters a path is
+// allowed to contain, so a checkout under a directory with a space in its name
+// comes back as AI%20PROJECTS and nothing is found. It also drops the leading
+// slash Windows drive letters used to arrive with.
+const ROOT = fileURLToPath(new URL("..", import.meta.url));
 const DIR = join(ROOT, "skills", "solana-onboarding", "components");
 const MANIFEST = join(DIR, "manifest.json");
 
